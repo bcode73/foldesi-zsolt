@@ -97,7 +97,8 @@ const translations = {
       label: "Segítségre van szükséged?",
       tw1: "HÍVJ", tw2: "ÍRJ!",
       tag1: "Marketing", tag2: "Technológia", tag3: "Stratégia",
-      copy: "Minden jog fenntartva."
+      copy: "Minden jog fenntartva.",
+      privacy: "Adatkezelési tájékoztató"
     },
     blog: {
       title: "Blog & meglátások",
@@ -230,7 +231,8 @@ const translations = {
       label: "Need a hand?",
       tw1: "CALL", tw2: "WRITE!",
       tag1: "Marketing", tag2: "Technology", tag3: "Strategy",
-      copy: "All rights reserved."
+      copy: "All rights reserved.",
+      privacy: "Privacy Policy"
     },
     blog: {
       title: "Blog & insights",
@@ -363,7 +365,8 @@ const translations = {
       label: "Brauchst du Unterstützung?",
       tw1: "RUF AN", tw2: "SCHREIB!",
       tag1: "Marketing", tag2: "Technologie", tag3: "Strategie",
-      copy: "Alle Rechte vorbehalten."
+      copy: "Alle Rechte vorbehalten.",
+      privacy: "Datenschutzerklärung"
     },
     blog: {
       title: "Blog & Einblicke",

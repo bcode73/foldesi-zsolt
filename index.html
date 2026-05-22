@@ -36,10 +36,17 @@
       </nav>
 
       <div class="nav-right">
-        <div class="lang-switch" id="langSwitch" aria-label="Language switcher">
-          <button type="button" data-lang="hu" class="is-active">HU</button>
-          <button type="button" data-lang="en">EN</button>
-          <button type="button" data-lang="de">DE</button>
+        <div class="lang-select" id="langSwitch">
+          <button type="button" class="lang-select__trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Nyelvválasztó">
+            <img class="lang-flag" id="langFlag" src="assets/images/flag-hu.png" alt="" />
+            <span class="lang-code" id="langCode">HU</span>
+            <svg class="lang-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="lang-select__menu" id="langMenu" role="menu">
+            <li><button type="button" data-lang="hu" role="menuitem"><img class="lang-flag" src="assets/images/flag-hu.png" alt="" /><span>Magyar</span></button></li>
+            <li><button type="button" data-lang="en" role="menuitem"><img class="lang-flag" src="assets/images/flag-en.png" alt="" /><span>English</span></button></li>
+            <li><button type="button" data-lang="de" role="menuitem"><img class="lang-flag" src="assets/images/flag-de.png" alt="" /><span>Deutsch</span></button></li>
+          </ul>
         </div>
         <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -249,27 +256,27 @@
         </div>
 
         <div class="services__grid">
-          <article class="service-card reveal">
+          <article class="service-card">
             <img class="service-card__icon" src="assets/images/service-1.png" alt="" aria-hidden="true" />
             <h3 class="service-card__title" data-translate="services.s1">Ügyfélszerzés &amp; növekedés</h3>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <img class="service-card__icon" src="assets/images/service-2.png" alt="" aria-hidden="true" />
             <h3 class="service-card__title" data-translate="services.s2">Láthatóság növelése</h3>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <img class="service-card__icon" src="assets/images/service-3.png" alt="" aria-hidden="true" />
             <h3 class="service-card__title" data-translate="services.s3">Social jelenlét, ami üzleti célt szolgál</h3>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <img class="service-card__icon" src="assets/images/service-4.png" alt="" aria-hidden="true" />
             <h3 class="service-card__title" data-translate="services.s4">Analitika &amp; döntéstámogatás</h3>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <img class="service-card__icon" src="assets/images/service-5.png" alt="" aria-hidden="true" />
             <h3 class="service-card__title" data-translate="services.s5">AI – Intelligens folyamatok és automatizáció</h3>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <img class="service-card__icon" src="assets/images/service-6.png" alt="" aria-hidden="true" />
             <h3 class="service-card__title" data-translate="services.s6">Digitális alapok: weboldalak és szoftverek</h3>
           </article>
@@ -382,9 +389,6 @@
 
     <!-- ===== CONTACT ===== -->
     <section class="section contact" id="contact">
-      <!-- Brick-wall texture behind the form (low opacity) -->
-      <img class="contact__bg" src="assets/images/brick-wall.png" alt="" aria-hidden="true" loading="lazy" />
-
       <div class="container">
         <div class="contact__head">
           <span class="eyebrow reveal" data-translate="contact.eyebrow">Kapcsolat</span>
@@ -410,10 +414,9 @@
         </div>
 
         <div class="contact__grid">
-          <!-- Contact photo: assets/images/shirt.png -->
+          <!-- Brick wall panel: assets/images/brick-wall.png -->
           <div class="contact__photo">
-            <img src="assets/images/shirt.png" width="900" height="1200"
-                 alt="Földesi Zsolt portré" loading="lazy" />
+            <img src="assets/images/brick-wall.png" alt="" aria-hidden="true" loading="lazy" />
           </div>
 
           <!-- The client connects the form fields with their own plugin.
@@ -448,7 +451,7 @@
               <input type="checkbox" name="privacy" required />
               <span>
                 <span data-translate="contact.check1pre">Hozzájárulok, hogy a megadott adataimat az oldal tulajdonosa kezelje. Elolvastam az</span>
-                <a href="#" data-translate="contact.check1link">Adatvédelmi tájékoztatót</a><span data-translate="contact.check1post">, és a megadott adatok valósak.</span>
+                <a href="privacy-policy.html" data-translate="contact.check1link">Adatvédelmi tájékoztatót</a><span data-translate="contact.check1post">, és a megadott adatok valósak.</span>
               </span>
             </label>
             <label class="contact-form__check">
@@ -517,6 +520,8 @@
 
       <p class="footer__copy">
         © <span id="year">2026</span> Földesi Zsolt. <span data-translate="footer.copy">Minden jog fenntartva.</span>
+        <span class="sep">·</span>
+        <a href="privacy-policy.html" data-translate="footer.privacy">Adatkezelési tájékoztató</a>
       </p>
     </div>
   </footer>

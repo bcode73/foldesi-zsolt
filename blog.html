@@ -29,10 +29,17 @@
         <a href="index.html#contact" class="btn btn--outline" data-translate="nav.contact">Kapcsolat</a>
       </nav>
       <div class="nav-right">
-        <div class="lang-switch" id="langSwitch" aria-label="Nyelvválasztó">
-          <button type="button" data-lang="hu" class="is-active">HU</button>
-          <button type="button" data-lang="en">EN</button>
-          <button type="button" data-lang="de">DE</button>
+        <div class="lang-select" id="langSwitch">
+          <button type="button" class="lang-select__trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Nyelvválasztó">
+            <img class="lang-flag" id="langFlag" src="assets/images/flag-hu.png" alt="" />
+            <span class="lang-code" id="langCode">HU</span>
+            <svg class="lang-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="lang-select__menu" id="langMenu" role="menu">
+            <li><button type="button" data-lang="hu" role="menuitem"><img class="lang-flag" src="assets/images/flag-hu.png" alt="" /><span>Magyar</span></button></li>
+            <li><button type="button" data-lang="en" role="menuitem"><img class="lang-flag" src="assets/images/flag-en.png" alt="" /><span>English</span></button></li>
+            <li><button type="button" data-lang="de" role="menuitem"><img class="lang-flag" src="assets/images/flag-de.png" alt="" /><span>Deutsch</span></button></li>
+          </ul>
         </div>
         <button class="nav-toggle" id="navToggle" aria-label="Menü" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -225,6 +232,8 @@
       </div>
       <p class="footer__copy">
         © <span id="year">2026</span> Földesi Zsolt. <span data-translate="footer.copy">Minden jog fenntartva.</span>
+        <span class="sep">·</span>
+        <a href="privacy-policy.html" data-translate="footer.privacy">Adatkezelési tájékoztató</a>
       </p>
     </div>
   </footer>

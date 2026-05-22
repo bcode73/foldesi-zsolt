@@ -33,8 +33,8 @@
     .from(".hero__photo img", { y: 40, opacity: 0, duration: 1 }, "-=0.8")
     .from(".scroll-cue", { opacity: 0, duration: 0.6 }, "-=0.3");
 
-  /* --- Általános scroll reveal --------------------------------------------- */
-  document.querySelectorAll(".reveal").forEach(function (el) {
+  /* --- Általános scroll reveal (a szolgáltatás-kártyák kivételével) ------- */
+  document.querySelectorAll(".reveal:not(.service-card)").forEach(function (el) {
     gsap.to(el, {
       opacity: 1,
       y: 0,
@@ -43,6 +43,26 @@
       scrollTrigger: { trigger: el, start: "top 88%" }
     });
   });
+
+  /* --- Szolgáltatás-kártyák — lépcsőzetes belépő -------------------------- */
+  var svcCards = gsap.utils.toArray(".service-card");
+  if (svcCards.length) {
+    gsap.set(svcCards, { y: 50, scale: 0.96 });
+    ScrollTrigger.batch(svcCards, {
+      start: "top 86%",
+      onEnter: function (batch) {
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power3.out",
+          overwrite: true
+        });
+      }
+    });
+  }
 
   /* --- Kép-reveal (clip-path) ---------------------------------------------- */
   document.querySelectorAll(".reveal-img").forEach(function (el) {
@@ -53,6 +73,25 @@
       scrollTrigger: { trigger: el, start: "top 85%" }
     });
   });
+
+  /* --- Szolgáltatás-kártyák — lépcsőzetes belépő --------------------------- */
+  var serviceCards = document.querySelectorAll(".service-card");
+  if (serviceCards.length) {
+    gsap.set(serviceCards, { opacity: 0, y: 56 });
+    ScrollTrigger.batch(serviceCards, {
+      start: "top 86%",
+      onEnter: function (batch) {
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.12,
+          ease: "power3.out",
+          overwrite: true
+        });
+      }
+    });
+  }
 
   /* --- Számlálók ----------------------------------------------------------- */
   document.querySelectorAll(".count").forEach(function (el) {
@@ -125,9 +164,9 @@
      biztonsági háló: ha valami 2,5 mp után is rejtve maradna, megjelenítjük. */
   window.addEventListener("load", function () { ScrollTrigger.refresh(); });
   setTimeout(function () {
-    document.querySelectorAll(".reveal, .reveal-img").forEach(function (el) {
+    document.querySelectorAll(".reveal, .reveal-img, .service-card").forEach(function (el) {
       if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
-        gsap.set(el, { opacity: 1, y: 0, clipPath: "none" });
+        gsap.set(el, { opacity: 1, y: 0, scale: 1, clipPath: "none" });
       }
     });
     ScrollTrigger.refresh();

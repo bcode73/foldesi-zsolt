@@ -35,7 +35,12 @@
 
     document.documentElement.setAttribute("lang", lang);
 
-    document.querySelectorAll("#langSwitch button").forEach(function (btn) {
+    var lf = document.getElementById("langFlag");
+    var lc = document.getElementById("langCode");
+    if (lf) lf.setAttribute("src", "assets/images/flag-" + lang + ".png");
+    if (lc) lc.textContent = lang.toUpperCase();
+
+    document.querySelectorAll("#langMenu button[data-lang]").forEach(function (btn) {
       btn.classList.toggle("is-active", btn.getAttribute("data-lang") === lang);
     });
 
@@ -53,13 +58,30 @@
     try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
     applyLanguage(saved || DEFAULT_LANG);
 
-    var sw = document.getElementById("langSwitch");
-    if (sw) {
-      sw.addEventListener("click", function (e) {
-        var btn = e.target.closest("button[data-lang]");
-        if (btn) applyLanguage(btn.getAttribute("data-lang"));
-      });
+    var wrap = document.getElementById("langSwitch");
+    var trigger = document.getElementById("langTrigger");
+    var menu = document.getElementById("langMenu");
+    if (!wrap || !trigger || !menu) return;
+
+    function closeMenu() {
+      wrap.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
     }
+
+    trigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = wrap.classList.toggle("is-open");
+      trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    menu.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-lang]");
+      if (!btn) return;
+      applyLanguage(btn.getAttribute("data-lang"));
+      closeMenu();
+    });
+    document.addEventListener("click", function (e) {
+      if (!wrap.contains(e.target)) closeMenu();
+    });
   }
 
   /* ======================================================================
@@ -264,14 +286,83 @@
   /* ======================================================================
      INDÍTÁS
      ====================================================================== */
+  /* ======================================================================
+     HORGONY KORREKCIÓ
+     Másik oldalról érkező #hivatkozás (pl. index.html#contact) esetén az
+     oldal a képek és animációk betöltése előtt rosszul ugrik. A teljes
+     betöltés után újra a megfelelő szakaszra görget.
+     ====================================================================== */
+  function initHashScroll() {
+    var hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+
+    function scrollToHash() {
+      var target;
+      try {
+        target = document.querySelector(hash);
+      } catch (e) {
+        return;
+      }
+      if (!target) return;
+      var top = target.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: top, behavior: "auto" });
+    }
+
+    window.addEventListener("load", function () {
+      scrollToHash();
+      setTimeout(scrollToHash, 300);
+    });
+  }
+
+  /* ======================================================================
+     MEGOSZTÁS GOMBOK (blogcikk oldal)
+     ====================================================================== */
+  function initShare() {
+    var li = document.getElementById("shareLinkedIn");
+    var fb = document.getElementById("shareFacebook");
+    var copy = document.getElementById("shareCopy");
+    if (!li && !fb && !copy) return;
+
+    var url = encodeURIComponent(window.location.href);
+
+    if (li) {
+      li.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+    }
+    if (fb) {
+      fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    }
+    if (copy) {
+      copy.addEventListener("click", function () {
+        var link = window.location.href;
+        function done() {
+          copy.classList.add("is-copied");
+          setTimeout(function () { copy.classList.remove("is-copied"); }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(link).then(done, done);
+        } else {
+          var tmp = document.createElement("input");
+          tmp.value = link;
+          document.body.appendChild(tmp);
+          tmp.select();
+          try { document.execCommand("copy"); } catch (e) {}
+          document.body.removeChild(tmp);
+          done();
+        }
+      });
+    }
+  }
+
   function init() {
     initLanguage();
     initNavbar();
     initSmoothScroll();
+    initHashScroll();
     initReviewSlider();
     initContactForm();
     initYear();
     initBlog();
+    initShare();
   }
 
   if (document.readyState === "loading") {
