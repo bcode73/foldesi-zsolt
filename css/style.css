@@ -1405,7 +1405,14 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   .scroll-cue { display: none; }
   .services__art { display: none; }
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__photo { min-height: 48vh; order: 2; }
+  .hero__photo { min-height: 48vh; order: 2; justify-content: center; }
+  .hero__photo img {
+    height: auto;
+    width: auto;
+    max-width: 88%;
+    max-height: 48vh;
+    margin-inline: auto;
+  }
   .hero__content { order: 1; padding-top: 1rem; }
   .about__grid { grid-template-columns: 1fr; }
   .about__media-outline { display: none; }
