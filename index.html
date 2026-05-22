@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Földesi Zsolt — Marketing · Technológia · Stratégia</title>
+  <meta name="description" content="Földesi Zsolt — több mint 15 év tapasztalat digitális ügyfélszerzésben és növekedési stratégiákban. Marketing, technológia és stratégia egy kézben." />
+  <meta name="theme-color" content="#003e83" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <meta property="og:title" content="Földesi Zsolt — Marketing · Technológia · Stratégia" />
+  <meta property="og:description" content="Kiszámítható eredmények digitális ügyfélszerzésben és növekedési stratégiában." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="logo" aria-label="Földesi Zsolt — home">
+        <img src="assets/images/fzs-logo.png" alt="Földesi Zsolt logo" width="170" height="38" />
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html" class="is-current" data-translate="nav.home">Főoldal</a>
+        <a href="#about" data-translate="nav.intro">Bemutatkozás</a>
+        <a href="#brands" data-translate="nav.references">Referenciák</a>
+        <a href="#services" data-translate="nav.services">Miben segíthetek</a>
+        <a href="blog.html" data-translate="nav.blog">Blog</a>
+        <a href="#contact" class="btn btn--outline" data-translate="nav.contact">Kapcsolat</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" id="langSwitch" aria-label="Language switcher">
+          <button type="button" data-lang="hu" class="is-active">HU</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="de">DE</button>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <svg class="hero__wave" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M-100 480C200 360 360 620 680 520S1100 280 1560 420" stroke="#00c7f2" stroke-opacity="0.18" stroke-width="1.5" fill="none"/>
+        <path d="M-100 560C220 460 380 700 700 600S1140 380 1560 520" stroke="#003e83" stroke-opacity="0.14" stroke-width="1.5" fill="none"/>
+        <path d="M-100 400C180 300 340 540 660 440S1080 220 1560 340" stroke="#00c7f2" stroke-opacity="0.12" stroke-width="1.5" fill="none"/>
+      </svg>
+
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <div class="num"><span data-translate="hero.stat1num">15+</span></div>
+              <div class="label" data-translate="hero.stat1label">Év tapasztalat</div>
+            </div>
+            <div class="hero__stat">
+              <div class="num"><span data-translate="hero.stat2num">46</span></div>
+              <div class="label" data-translate="hero.stat2label">Országban</div>
+            </div>
+          </div>
+
+          <h1 class="hero__name" aria-label="Földesi Zsolt">
+            <span class="word"><span>Földesi</span></span>
+            <span class="word"><span>Zsolt</span></span>
+          </h1>
+
+          <p class="hero__subtitle">
+            <span data-translate="hero.subtitle1">Marketing</span>
+            <i aria-hidden="true"></i>
+            <span data-translate="hero.subtitle2">Technológia</span>
+            <i aria-hidden="true"></i>
+            <span data-translate="hero.subtitle3">Stratégia</span>
+          </p>
+        </div>
+
+        <!-- Hero photo: assets/images/standing.png -->
+        <div class="hero__photo">
+          <img src="assets/images/standing.png" width="900" height="1200"
+               alt="Földesi Zsolt portré" fetchpriority="high" />
+        </div>
+      </div>
+
+      <a href="#counters" class="scroll-cue" aria-label="Scroll down">
+        <span data-translate="hero.scroll">Görgess lejjebb</span>
+        <span class="scroll-cue__chevrons" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ===== MOTTO ===== -->
+    <section class="motto">
+      <div class="container">
+        <p class="motto__text reveal" data-translate="motto.text">
+          Ismerd a piacod, segítsd az ügyfeled, növeld a profitod.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== COUNTERS ===== -->
+    <section class="section counters" id="counters">
+      <svg class="counters__lines" viewBox="0 0 1440 500" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 250C300 120 500 380 760 250S1140 120 1440 250" stroke="#ffffff" stroke-opacity="0.2" fill="none"/>
+        <path d="M0 300C300 170 500 430 760 300S1140 170 1440 300" stroke="#00c7f2" stroke-opacity="0.25" fill="none"/>
+        <path d="M0 200C300 70 500 330 760 200S1140 70 1440 200" stroke="#ffffff" stroke-opacity="0.12" fill="none"/>
+      </svg>
+      <div class="container">
+        <h2 class="counters__head reveal" data-translate="counters.heading">Eredmények számokban</h2>
+        <div class="counters__grid">
+          <article class="counter-card reveal">
+            <div class="num">
+              <span class="count" data-target="265" data-translate="counters.c1num">265</span><span class="suffix" data-translate="counters.c1suffix">%</span>
+            </div>
+            <p class="label" data-translate="counters.c1label">Növekedés az organikus forgalomban</p>
+          </article>
+          <article class="counter-card reveal">
+            <div class="num">
+              <span class="count" data-target="3" data-translate="counters.c2num">3</span><span class="suffix" data-translate="counters.c2suffix">x</span>
+            </div>
+            <p class="label" data-translate="counters.c2label">Többszörös konverzió</p>
+          </article>
+          <article class="counter-card reveal">
+            <div class="num">
+              <span class="count" data-target="83" data-translate="counters.c3num">83</span><span class="suffix" data-translate="counters.c3suffix">%</span>
+            </div>
+            <p class="label" data-translate="counters.c3label">Javulás az attribúcióban</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRANDS ===== -->
+    <section class="section brands" id="brands">
+      <div class="container">
+        <div class="brands__head">
+          <span class="eyebrow reveal" data-translate="brands.eyebrow">Referenciák</span>
+          <h2 class="h-section reveal" data-translate="brands.heading">Márkák, amikkel dolgoztam.</h2>
+          <p class="lead reveal" data-translate="brands.lead">
+            Ezeket az együttműködéseket elismerésnek és felelősségnek is tartom: elkötelezettség
+            a vállalkozások gyors, biztonságos és jövőálló digitális fejlődése iránt.
+          </p>
+        </div>
+      </div>
+
+      <div class="brands__track-wrap">
+        <!-- Top row: scrolls right on scroll -->
+        <div class="brands__row" data-direction="right">
+          <div class="brand-card"><img src="assets/images/unilever.png" alt="Unilever logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/sanofi.png" alt="Sanofi logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/dyson.png" alt="Dyson logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/volvo.png" alt="Volvo logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/szallas.png" alt="Szallas.hu logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/velux.png" alt="Velux logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/mazda.png" alt="Mazda logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/aldi.png" alt="Aldi logó" loading="lazy" /></div>
+          <!-- duplicate set for the infinite loop -->
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/unilever.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/sanofi.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/dyson.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/volvo.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/szallas.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/velux.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/mazda.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/aldi.png" alt="" loading="lazy" /></div>
+        </div>
+        <!-- Bottom row: scrolls left on scroll -->
+        <div class="brands__row" data-direction="left">
+          <div class="brand-card"><img src="assets/images/aldi.png" alt="Aldi logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/mazda.png" alt="Mazda logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/velux.png" alt="Velux logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/szallas.png" alt="Szallas.hu logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/volvo.png" alt="Volvo logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/dyson.png" alt="Dyson logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/sanofi.png" alt="Sanofi logó" loading="lazy" /></div>
+          <div class="brand-card"><img src="assets/images/unilever.png" alt="Unilever logó" loading="lazy" /></div>
+          <!-- duplicate set for the infinite loop -->
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/aldi.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/mazda.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/velux.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/szallas.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/volvo.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/dyson.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/sanofi.png" alt="" loading="lazy" /></div>
+          <div class="brand-card" aria-hidden="true"><img src="assets/images/unilever.png" alt="" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="about__head reveal" data-translate="about.heading">Pár szó magamról.</h2>
+        <div class="about__grid">
+          <div class="about__media">
+            <div class="about__media-outline" aria-hidden="true"></div>
+            <!-- About photo: assets/images/shirt.png -->
+            <div class="about__media-frame reveal-img">
+              <img src="assets/images/shirt.png" width="900" height="1200"
+                   alt="Földesi Zsolt portré, összefont karokkal" loading="lazy" />
+            </div>
+          </div>
+          <div class="about__text">
+            <p class="reveal" data-translate="about.p1">Több mint 15 éve foglalkozom digitális ügyfélszerzéssel…</p>
+            <p class="reveal" data-translate="about.p2">Számomra a marketing nem költség…</p>
+            <p class="reveal" data-translate="about.p3">Dolgoztam szövegíróként, fejlesztőként…</p>
+            <ul class="about__list">
+              <li class="reveal">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5 20.4l1.4-6.8L1.3 9l6.9-.7z"/></svg>
+                <span data-translate="about.li1">Hiszek a stratégiai gondolkodás és a technikai megvalósítás összhangjában.</span>
+              </li>
+              <li class="reveal">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5 20.4l1.4-6.8L1.3 9l6.9-.7z"/></svg>
+                <span data-translate="about.li2">Célom a stabil keresletet és növekedést generáló, jól tervezett kommunikáció.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section services" id="services">
+      <svg class="services__top" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 70V20C360 -10 1080 -10 1440 20V70Z" fill="currentColor"/>
+      </svg>
+      <img class="services__art" src="assets/images/services-art.png" alt="" aria-hidden="true" />
+      <div class="services__dots" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="services__head">
+          <span class="eyebrow reveal" data-translate="services.eyebrow">Szolgáltatások</span>
+          <h2 class="h-section reveal" data-translate="services.heading">Miben segíthetek?</h2>
+          <p class="lead reveal" data-translate="services.lead">
+            Értsd a piacod, segítsd az ügyfeled, növeld a profitod. Ezekben az elvekben hiszek,
+            és a tevékenységemet is ezek köré építettem fel.
+          </p>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card reveal">
+            <img class="service-card__icon" src="assets/images/service-1.png" alt="" aria-hidden="true" />
+            <h3 class="service-card__title" data-translate="services.s1">Ügyfélszerzés &amp; növekedés</h3>
+          </article>
+          <article class="service-card reveal">
+            <img class="service-card__icon" src="assets/images/service-2.png" alt="" aria-hidden="true" />
+            <h3 class="service-card__title" data-translate="services.s2">Láthatóság növelése</h3>
+          </article>
+          <article class="service-card reveal">
+            <img class="service-card__icon" src="assets/images/service-3.png" alt="" aria-hidden="true" />
+            <h3 class="service-card__title" data-translate="services.s3">Social jelenlét, ami üzleti célt szolgál</h3>
+          </article>
+          <article class="service-card reveal">
+            <img class="service-card__icon" src="assets/images/service-4.png" alt="" aria-hidden="true" />
+            <h3 class="service-card__title" data-translate="services.s4">Analitika &amp; döntéstámogatás</h3>
+          </article>
+          <article class="service-card reveal">
+            <img class="service-card__icon" src="assets/images/service-5.png" alt="" aria-hidden="true" />
+            <h3 class="service-card__title" data-translate="services.s5">AI – Intelligens folyamatok és automatizáció</h3>
+          </article>
+          <article class="service-card reveal">
+            <img class="service-card__icon" src="assets/images/service-6.png" alt="" aria-hidden="true" />
+            <h3 class="service-card__title" data-translate="services.s6">Digitális alapok: weboldalak és szoftverek</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUOTE (full-width dark statement) ===== -->
+    <section class="section quote">
+      <div class="container">
+        <div class="quote__mark" aria-hidden="true">&ldquo;</div>
+        <p class="quote__text reveal">
+          <b data-translate="quote.pre">Van egy víziód?</b>
+          <span data-translate="quote.text">Nekünk van kávénk és végtelen lelkesedésünk hozzá.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS (4 cards) ===== -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="testimonials__head">
+          <div>
+            <span class="eyebrow reveal" data-translate="testimonials.eyebrow">Vélemények</span>
+            <h2 class="h-section reveal">
+              <span data-translate="testimonials.heading1">Rólam</span>
+              <span class="accent" data-translate="testimonials.heading2">mondták.</span>
+            </h2>
+            <p class="lead reveal" data-translate="testimonials.lead">
+              Minden ügyfél egy bizalom, amit megbecsülünk, és egy felelősség, amit komolyan veszünk.
+            </p>
+          </div>
+          <div class="slider-nav" aria-label="Testimonials navigation">
+            <button type="button" id="reviewPrev" aria-label="Previous">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button type="button" id="reviewNext" aria-label="Next">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonials__viewport">
+          <div class="testimonials__track" id="reviewTrack">
+
+            <!-- Testimonial 1 — Victor Villarruel -->
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 / 5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="review-card__text" data-translate="testimonials.r1text">…</p>
+              <div class="review-card__person">
+                <img class="review-card__avatar" src="assets/images/victor.png" alt="Victor Villarruel" loading="lazy" />
+                <div>
+                  <div class="review-card__name" data-translate="testimonials.r1name">Victor Villarruel</div>
+                  <div class="review-card__role" data-translate="testimonials.r1role">Lead Data Analyst @ Velux</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Testimonial 2 — Imre Vattamány -->
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 / 5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="review-card__text" data-translate="testimonials.r2text">…</p>
+              <div class="review-card__person">
+                <img class="review-card__avatar" src="assets/images/imre.png" alt="Imre Vattamány" loading="lazy" />
+                <div>
+                  <div class="review-card__name" data-translate="testimonials.r2name">Imre Vattamány</div>
+                  <div class="review-card__role" data-translate="testimonials.r2role">Regional Digital Marketing Manager @ Bosch Magyarország</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Testimonial 3 — Peter Gaspar -->
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 / 5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="review-card__text" data-translate="testimonials.r3text">…</p>
+              <div class="review-card__person">
+                <img class="review-card__avatar" src="assets/images/gaspar.png" alt="Peter Gaspar" loading="lazy" />
+                <div>
+                  <div class="review-card__name" data-translate="testimonials.r3name">Peter Gaspar</div>
+                  <div class="review-card__role" data-translate="testimonials.r3role">CEO @ Oxifa project</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Testimonial 4 — András Komjáthy -->
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 / 5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="review-card__text" data-translate="testimonials.r4text">…</p>
+              <div class="review-card__person">
+                <img class="review-card__avatar" src="assets/images/andras.png" alt="András Komjáthy" loading="lazy" />
+                <div>
+                  <div class="review-card__name" data-translate="testimonials.r4name">András Komjáthy</div>
+                  <div class="review-card__role" data-translate="testimonials.r4role">Senior Commercial Analyst @ VELUX</div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <!-- Brick-wall texture behind the form (low opacity) -->
+      <img class="contact__bg" src="assets/images/brick-wall.png" alt="" aria-hidden="true" loading="lazy" />
+
+      <div class="container">
+        <div class="contact__head">
+          <span class="eyebrow reveal" data-translate="contact.eyebrow">Kapcsolat</span>
+          <h2 class="h-section reveal" data-translate="contact.heading">Küldj nekem üzenetet</h2>
+          <p class="lead reveal" data-translate="contact.lead">
+            Minden ügyfél egy bizalom, amit megbecsülünk, és egy felelősség, amit komolyan veszünk.
+          </p>
+        </div>
+
+        <div class="contact__info">
+          <div class="contact__info-item reveal">
+            <div class="k" data-translate="contact.kEmail">E-mail</div>
+            <a href="mailto:hello@net-face.com">hello@net-face.com</a>
+          </div>
+          <div class="contact__info-item reveal">
+            <div class="k" data-translate="contact.kPhone">Telefon</div>
+            <a href="tel:+36301538944">+36-30-153-8944</a>
+          </div>
+          <div class="contact__info-item reveal">
+            <div class="k" data-translate="contact.kSocial">Közösségi</div>
+            <a href="https://www.linkedin.com/in/foldesi-zsolt" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="contact__grid">
+          <!-- Contact photo: assets/images/shirt.png -->
+          <div class="contact__photo">
+            <img src="assets/images/shirt.png" width="900" height="1200"
+                 alt="Földesi Zsolt portré" loading="lazy" />
+          </div>
+
+          <!-- The client connects the form fields with their own plugin.
+               The name attributes and CSS classes are ready for that. -->
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="contact-form__row">
+              <div class="field">
+                <span class="field__num">1</span>
+                <input type="text" name="first_name" data-translate-placeholder="contact.fFirst" placeholder="Keresztnév" aria-label="Keresztnév" />
+              </div>
+              <div class="field">
+                <span class="field__num">2</span>
+                <input type="text" name="last_name" data-translate-placeholder="contact.fLast" placeholder="Vezetéknév" aria-label="Vezetéknév" />
+              </div>
+            </div>
+            <div class="contact-form__row">
+              <div class="field">
+                <span class="field__num">3</span>
+                <input type="email" name="email" data-translate-placeholder="contact.fEmail" placeholder="E-mail cím" aria-label="E-mail cím" />
+              </div>
+              <div class="field">
+                <span class="field__num">4</span>
+                <input type="tel" name="phone" data-translate-placeholder="contact.fPhone" placeholder="Telefonszám" aria-label="Telefonszám" />
+              </div>
+            </div>
+            <div class="field">
+              <span class="field__num">5</span>
+              <textarea name="message" data-translate-placeholder="contact.fMessage" placeholder="Írd meg az üzeneted" aria-label="Üzenet"></textarea>
+            </div>
+
+            <label class="contact-form__check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                <span data-translate="contact.check1pre">Hozzájárulok, hogy a megadott adataimat az oldal tulajdonosa kezelje. Elolvastam az</span>
+                <a href="#" data-translate="contact.check1link">Adatvédelmi tájékoztatót</a><span data-translate="contact.check1post">, és a megadott adatok valósak.</span>
+              </span>
+            </label>
+            <label class="contact-form__check">
+              <input type="checkbox" name="marketing" />
+              <span data-translate="contact.check2">Hozzájárulok, hogy marketing célú e-maileket kapjak.</span>
+            </label>
+
+            <div class="contact-form__footer">
+              <!-- reCAPTCHA placeholder — the client adds their own plugin here -->
+              <div class="recaptcha-box" aria-hidden="true">
+                <span class="box"></span>
+                <span data-translate="contact.recaptcha">Nem vagyok robot</span>
+              </div>
+              <button type="submit" class="btn btn--light">
+                <span data-translate="contact.btn">Felveszem a kapcsolatot</span>
+                <span class="btn__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__label" data-translate="footer.label">Segítségre van szükséged?</p>
+          <h2 class="footer__headline">
+            <span class="footer__type" id="typewriter"
+                  data-word1="HÍVJ" data-word2="ÍRJ!">HÍVJ</span>
+          </h2>
+        </div>
+        <div class="footer__contact">
+          <a href="tel:+36301538944">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 1 15 1 6c0-1 1-2 2-2"/></svg>
+            +36-30-153-8944
+          </a>
+          <a href="mailto:hello@net-face.com">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            hello@net-face.com
+          </a>
+          <a href="https://www.linkedin.com/in/foldesi-zsolt" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.5 4.73-2.5 5 0 6 3.3 6 7.6V24h-5v-7.6c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4V24H8z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__brand">
+          <img class="footer__logo" src="assets/images/fzs-logo-white.png" alt="Földesi Zsolt logo" width="260" height="62" />
+          <div class="tags">
+            <span data-translate="footer.tag1">Marketing</span><i></i>
+            <span data-translate="footer.tag2">Technológia</span><i></i>
+            <span data-translate="footer.tag3">Stratégia</span>
+          </div>
+        </div>
+        <img class="footer__sign" src="assets/images/signature.png" alt="" aria-hidden="true" />
+      </div>
+
+      <p class="footer__copy">
+        © <span id="year">2026</span> Földesi Zsolt. <span data-translate="footer.copy">Minden jog fenntartva.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- GSAP animation library (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Site scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

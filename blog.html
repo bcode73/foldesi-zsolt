@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Földesi Zsolt</title>
+  <meta name="description" content="Gondolatok marketingről, technológiáról és növekedési stratégiákról — Földesi Zsolt blogja." />
+  <meta name="theme-color" content="#003e83" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar is-scrolled" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="logo" aria-label="Földesi Zsolt — home">
+        <img src="assets/images/fzs-logo.png" alt="Földesi Zsolt logo" width="170" height="38" />
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Fő navigáció">
+        <a href="index.html" data-translate="nav.home">Főoldal</a>
+        <a href="index.html#about" data-translate="nav.intro">Bemutatkozás</a>
+        <a href="index.html#brands" data-translate="nav.references">Referenciák</a>
+        <a href="index.html#services" data-translate="nav.services">Miben segíthetek</a>
+        <a href="blog.html" class="is-current" data-translate="nav.blog">Blog</a>
+        <a href="index.html#contact" class="btn btn--outline" data-translate="nav.contact">Kapcsolat</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-switch" id="langSwitch" aria-label="Nyelvválasztó">
+          <button type="button" data-lang="hu" class="is-active">HU</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="de">DE</button>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" data-translate="nav.blog">Blog</span>
+        <h1 class="h-display" data-translate="blog.title">Blog &amp; meglátások</h1>
+        <p class="lead" data-translate="blog.lead">
+          Gondolatok marketingről, technológiáról és növekedési stratégiákról.
+        </p>
+
+        <div class="blog-tools">
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
+            <input type="search" id="blogSearch" data-translate-placeholder="blog.search" placeholder="Keresés a cikkek között…" aria-label="Keresés" />
+          </div>
+          <select id="blogCategory" aria-label="Kategória szűrés">
+            <option value="all" data-translate="blog.allCats">Minden kategória</option>
+            <option value="growth" data-translate="blog.catGrowth">Növekedés</option>
+            <option value="seo" data-translate="blog.catSeo">SEO</option>
+            <option value="ai" data-translate="blog.catAi">AI &amp; Automatizáció</option>
+            <option value="analytics" data-translate="blog.catAnalytics">Analitika</option>
+            <option value="strategy" data-translate="blog.catStrategy">Stratégia</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BLOG GRID ================= -->
+    <section class="section" style="padding-top:clamp(2.5rem,5vw,4rem)">
+      <div class="container">
+        <div class="blog-grid" id="blogGrid">
+
+          <article class="post-card" data-category="growth">
+            <a href="blog-post.html" class="post-card__media">
+              <img src="assets/images/blog-1.png" alt="" loading="lazy" />
+            </a>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="tag" data-translate="blog.catGrowth">Növekedés</span><span>•</span><span>2026.05.12</span>
+              </div>
+              <h2 class="post-card__title" data-translate="blog.p1title">Hogyan építs kiszámítható ügyfélszerzési rendszert?</h2>
+              <p class="post-card__excerpt" data-translate="blog.p1excerpt">A kampányok jönnek-mennek, a rendszer marad.</p>
+              <a href="blog-post.html" class="post-card__more">
+                <span data-translate="blog.readMore">Tovább olvasom</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="seo">
+            <a href="blog-post.html" class="post-card__media">
+              <img src="assets/images/blog-2.png" alt="" loading="lazy" />
+            </a>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="tag" data-translate="blog.catSeo">SEO</span><span>•</span><span>2026.04.28</span>
+              </div>
+              <h2 class="post-card__title" data-translate="blog.p2title">SEO 2026-ban: amire valóban érdemes figyelni</h2>
+              <p class="post-card__excerpt" data-translate="blog.p2excerpt">A keresőoptimalizálás alapjai nem változtak, de a hangsúlyok igen.</p>
+              <a href="blog-post.html" class="post-card__more">
+                <span data-translate="blog.readMore">Tovább olvasom</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="ai">
+            <a href="blog-post.html" class="post-card__media">
+              <img src="assets/images/blog-3.png" alt="" loading="lazy" />
+            </a>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="tag" data-translate="blog.catAi">AI</span><span>•</span><span>2026.04.10</span>
+              </div>
+              <h2 class="post-card__title" data-translate="blog.p3title">Az AI a marketingben: hol segít és hol nem</h2>
+              <p class="post-card__excerpt" data-translate="blog.p3excerpt">Az automatizáció időt szabadít fel, de nem helyettesíti a stratégiát.</p>
+              <a href="blog-post.html" class="post-card__more">
+                <span data-translate="blog.readMore">Tovább olvasom</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="analytics">
+            <a href="blog-post.html" class="post-card__media">
+              <img src="assets/images/blog-4.png" alt="" loading="lazy" />
+            </a>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="tag" data-translate="blog.catAnalytics">Analitika</span><span>•</span><span>2026.03.22</span>
+              </div>
+              <h2 class="post-card__title" data-translate="blog.p4title">Attribúció: miért hazudik a legtöbb riport?</h2>
+              <p class="post-card__excerpt" data-translate="blog.p4excerpt">Ha rosszul méred, rosszul döntesz.</p>
+              <a href="blog-post.html" class="post-card__more">
+                <span data-translate="blog.readMore">Tovább olvasom</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="strategy">
+            <a href="blog-post.html" class="post-card__media">
+              <img src="assets/images/blog-5.png" alt="" loading="lazy" />
+            </a>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="tag" data-translate="blog.catStrategy">Stratégia</span><span>•</span><span>2026.03.05</span>
+              </div>
+              <h2 class="post-card__title" data-translate="blog.p5title">A weboldal mint értékesítési eszköz</h2>
+              <p class="post-card__excerpt" data-translate="blog.p5excerpt">Egy weboldal nem névjegy, hanem munkatárs.</p>
+              <a href="blog-post.html" class="post-card__more">
+                <span data-translate="blog.readMore">Tovább olvasom</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="post-card" data-category="growth">
+            <a href="blog-post.html" class="post-card__media">
+              <img src="assets/images/blog-6.png" alt="" loading="lazy" />
+            </a>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="tag" data-translate="blog.catGrowth">Növekedés</span><span>•</span><span>2026.02.18</span>
+              </div>
+              <h2 class="post-card__title" data-translate="blog.p6title">Konverzióoptimalizálás: kis lépések, nagy hatás</h2>
+              <p class="post-card__excerpt" data-translate="blog.p6excerpt">Nem kell mindent újratervezni.</p>
+              <a href="blog-post.html" class="post-card__more">
+                <span data-translate="blog.readMore">Tovább olvasom</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p id="blogEmpty" data-translate="misc.noResult"
+           style="display:none;text-align:center;color:var(--muted);padding:3rem 0">
+          Nincs a keresésnek megfelelő cikk.
+        </p>
+
+        <div class="pagination" id="blogPagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__label" data-translate="footer.label">Segítségre van szükséged?</p>
+          <h2 class="footer__headline">
+            <span class="footer__type" id="typewriter" data-word1="HÍVJ" data-word2="ÍRJ!">HÍVJ</span>
+          </h2>
+        </div>
+        <div class="footer__contact">
+          <a href="tel:+36301538944">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 1 15 1 6c0-1 1-2 2-2"/></svg>
+            +36-30-153-8944
+          </a>
+          <a href="mailto:hello@net-face.com">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            hello@net-face.com
+          </a>
+          <a href="https://www.linkedin.com/in/foldesi-zsolt" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.5 4.73-2.5 5 0 6 3.3 6 7.6V24h-5v-7.6c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4V24H8z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__brand">
+          <img class="footer__logo" src="assets/images/fzs-logo-white.png" alt="Földesi Zsolt logo" width="260" height="62" />
+          <div class="tags">
+            <span data-translate="footer.tag1">Marketing</span><i></i>
+            <span data-translate="footer.tag2">Technológia</span><i></i>
+            <span data-translate="footer.tag3">Stratégia</span>
+          </div>
+        </div>
+        <img class="footer__sign" src="assets/images/signature.png" alt="" aria-hidden="true" />
+      </div>
+      <p class="footer__copy">
+        © <span id="year">2026</span> Földesi Zsolt. <span data-translate="footer.copy">Minden jog fenntartva.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
