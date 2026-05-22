@@ -1403,7 +1403,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   .nav-links a.btn--outline { color: var(--white); }
   .nav-toggle { display: flex; }
   .scroll-cue { display: none; }
-  .services__art { width: 78%; opacity: 0.4; }
+  .services__art { display: none; }
   .hero__grid { grid-template-columns: 1fr; }
   .hero__photo { min-height: 48vh; order: 2; }
   .hero__content { order: 1; padding-top: 1rem; }
