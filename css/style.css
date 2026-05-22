@@ -4,6 +4,50 @@
    Tartalom: változók › alap › elemek › navbar › szekciók › blog › reszponzív
    ========================================================================== */
 
+/* --- Betűtípus (helyben tárolva, nem külső CDN) -------------------------- */
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../assets/fonts/bai-jamjuree-latin-200-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/bai-jamjuree-latin-300-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/bai-jamjuree-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/bai-jamjuree-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/bai-jamjuree-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/bai-jamjuree-latin-700-normal.woff2") format("woff2");
+}
+
 /* --- Változók ------------------------------------------------------------- */
 :root {
   --navy:        #003e83;

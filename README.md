@@ -22,8 +22,11 @@ foldesi-zsolt/
 ├── js/
 │   ├── translations.js All site text (HU/EN/DE) — EDIT TEXT HERE
 │   ├── animations.js   GSAP animations
-│   └── main.js         Language switch, menu, slider, form, blog logic
-└── assets/images/      Images, logos, favicon
+│   ├── main.js         Language switch, menu, slider, form, blog logic
+│   └── vendor/         GSAP library (self-hosted)
+└── assets/
+    ├── images/         Images, logos, favicon
+    └── fonts/          Bai Jamjuree font (self-hosted)
 ```
 
 ### Opening / running
@@ -118,11 +121,17 @@ the dialogs cannot read the page, so the preview will be empty — this is
 expected and resolves itself after deployment. The copy-link button works
 everywhere, including locally.
 
-### External dependency
+### Dependencies — fully self-hosted
 
-The `GSAP` animation library loads from a CDN (cdnjs). An internet connection
-is required for it. To host it locally, download `gsap.min.js` and
-`ScrollTrigger.min.js` and update the `<script src="...">` references.
+The site has **no external dependencies** and makes no third-party requests:
+
+- **GSAP** animation library — stored locally in `js/vendor/`.
+- **Bai Jamjuree** font — stored locally in `assets/fonts/` (6 weights, `.woff2`),
+  declared with `@font-face` at the top of `css/style.css`.
+
+This means the site loads fast and works fully offline. Nothing is fetched
+from a CDN or Google Fonts, so there is no slow first paint waiting on an
+external server.
 
 ### Deploy & updates
 
@@ -165,8 +174,11 @@ foldesi-zsolt/
 ├── js/
 │   ├── translations.js Az összes szöveg (HU/EN/DE) — ITT szerkeszthető
 │   ├── animations.js   GSAP animációk
-│   └── main.js         Nyelvváltás, menü, szlájder, űrlap, blog logika
-└── assets/images/      Képek, logók, favicon
+│   ├── main.js         Nyelvváltás, menü, szlájder, űrlap, blog logika
+│   └── vendor/         GSAP könyvtár (helyben tárolva)
+└── assets/
+    ├── images/         Képek, logók, favicon
+    └── fonts/          Bai Jamjuree betűtípus (helyben tárolva)
 ```
 
 ### Megnyitás / futtatás
@@ -261,11 +273,16 @@ megnyitva a megosztó ablak nem tudja beolvasni az oldalt, ezért a kép üres l
 — ez normális, és élesítés után magától megoldódik. A link-másolás gomb
 mindenhol működik, helyben is.
 
-### Külső függőség
+### Függőségek — minden helyben tárolva
 
-A `GSAP` animációs könyvtár CDN-ről töltődik be (cdnjs). Internetkapcsolat
-szükséges hozzá. Ha helyben szeretnéd tárolni, töltsd le a `gsap.min.js` és
-`ScrollTrigger.min.js` fájlokat, és cseréld a `<script src="...">` hivatkozásokat.
+Az oldalnak **nincs külső függősége**, és nem küld kérést harmadik félnek:
+
+- **GSAP** animációs könyvtár — helyben, a `js/vendor/` mappában.
+- **Bai Jamjuree** betűtípus — helyben, az `assets/fonts/` mappában (6 vastagság,
+  `.woff2`), a `css/style.css` elején `@font-face` szabályokkal beállítva.
+
+Így az oldal gyorsan tölt, és teljesen offline is működik. Semmi nem töltődik
+CDN-ről vagy a Google Fontsról, ezért nincs lassú betöltés külső szerverre várva.
 
 ### Közzététel & frissítés
 
