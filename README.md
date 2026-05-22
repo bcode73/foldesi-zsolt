@@ -36,24 +36,31 @@ python3 -m http.server 8000
 # then in the browser: http://localhost:8000
 ```
 
-### ⚠️ IMPORTANT: images must be replaced
+### Images
 
-The `assets/images/` folder currently contains **placeholder images**, because
-the original images were not available during the build. Before going live,
-replace them with the real files — **keep the filenames exactly the same**:
+All images live in `assets/images/` and split into two groups.
+
+**A) Photo & logo slots — use the real files** (keep the filenames identical):
 
 | File | What it should be |
 |------|-------------------|
 | `fzs-logo.png` | Logo for the navbar (dark version) |
 | `fzs-logo-white.png` | Logo for the footer (white version) |
 | `signature.png` | Signature-style mark in the footer |
-| `standing.png` | Földesi Zsolt standing portrait (hero, black & white) |
+| `standing.png` | Földesi Zsolt standing portrait (hero) |
 | `shirt.png` | Földesi Zsolt portrait, arms crossed (About + Contact) |
-| `brick-wall.png` | Brick-wall texture behind the contact section |
 | `victor.png`, `imre.png`, `gaspar.png`, `andras.png` | Testimonial profile photos |
 | `dyson.png`, `volvo.png`, `szallas.png`, `velux.png`, `mazda.png`, `sanofi.png`, `unilever.png`, `aldi.png` | Brand logos (transparent PNG preferred) |
-| `blog-1.png` … `blog-6.png` | Blog post cover images (3:2 ratio recommended) |
 | `favicon.png` | Browser tab icon |
+
+**B) Designed graphics — on-brand, ready to use** (replace only if you want to):
+
+| File | What it is |
+|------|------------|
+| `blog-1.png` … `blog-6.png` | Blog post cover graphics (3:2) |
+| `service-1.png` … `service-6.png` | Icons for the 6 service cards |
+| `services-art.png` | Abstract background graphic in the Services section |
+| `brick-wall.png` | Brick-wall texture behind the contact form |
 
 ### Editing text (for non-developers)
 
@@ -85,6 +92,20 @@ reCAPTCHA goes where the `.recaptcha-box` element is.
 The `GSAP` animation library loads from a CDN (cdnjs). An internet connection
 is required for it. To host it locally, download `gsap.min.js` and
 `ScrollTrigger.min.js` and update the `<script src="...">` references.
+
+### Deploy & updates
+
+The project is version-controlled with Git and hosted on GitHub. To publish
+changes after editing files:
+
+```
+git add .
+git commit -m "Fix: short description of the change"
+git push
+```
+
+To put the site online, enable **GitHub Pages** in the repository:
+Settings → Pages → Branch: `main` → `/ (root)` → Save.
 
 ### Notes on the design
 
@@ -127,27 +148,31 @@ python3 -m http.server 8000
 # majd böngészőben: http://localhost:8000
 ```
 
-### ⚠️ FONTOS: a képeket cserélni kell
+### Képek
 
-A `assets/images/` mappában jelenleg **helykitöltő (placeholder) képek** vannak,
-mert az eredeti képek nem voltak elérhetők a build során. Éles használat előtt
-ezeket cseréld le a valódi fájlokra — **a fájlneveket tartsd meg változatlanul**:
+Minden kép a `assets/images/` mappában van, két csoportra osztva.
+
+**A) Fotó- és logóhelyek — a valódi fájlokat tedd be** (a fájlneveket tartsd meg):
 
 | Fájl | Mi legyen rajta |
 |------|-----------------|
 | `fzs-logo.png` | Logó a navbarba (sötét változat) |
 | `fzs-logo-white.png` | Logó a footerbe (fehér változat) |
 | `signature.png` | Aláírás-jellegű jel a footerben |
-| `standing.png` | Földesi Zsolt álló portré (hero, fekete-fehér) |
+| `standing.png` | Földesi Zsolt álló portré (hero) |
 | `shirt.png` | Földesi Zsolt portré, összefont karral (About + Kapcsolat) |
-| `brick-wall.png` | Téglafal-textúra a Kapcsolat szekció hátterében |
 | `victor.png`, `imre.png`, `gaspar.png`, `andras.png` | A vélemények profilképei |
 | `dyson.png`, `volvo.png`, `szallas.png`, `velux.png`, `mazda.png`, `sanofi.png`, `unilever.png`, `aldi.png` | Márkalogók (lehetőleg átlátszó PNG) |
-| `blog-1.png` … `blog-6.png` | Blog cikkek borítóképei (3:2 arány ajánlott) |
 | `favicon.png` | Böngészőfül-ikon |
 
-> Megjegyzés: a `blog-1.png` … `blog-6.png` borítóképek helykitöltők — cseréld
-> valódi cikk-képekre, vagy add meg a végleges fájlneveket.
+**B) Tervezett grafikák — márkahűek, használatra készek** (csak ha cserélni szeretnéd):
+
+| Fájl | Mi ez |
+|------|-------|
+| `blog-1.png` … `blog-6.png` | Blog cikkek borítógrafikái (3:2) |
+| `service-1.png` … `service-6.png` | A 6 szolgáltatás-kártya ikonjai |
+| `services-art.png` | Absztrakt háttérgrafika a Szolgáltatások szekcióban |
+| `brick-wall.png` | Téglafal-textúra a kapcsolati űrlap mögött |
 
 ### Szöveg szerkesztése (nem programozóknak)
 
@@ -179,6 +204,20 @@ PHP-szkript) bekötése szükséges — a hely elő van készítve a `main.js`
 A `GSAP` animációs könyvtár CDN-ről töltődik be (cdnjs). Internetkapcsolat
 szükséges hozzá. Ha helyben szeretnéd tárolni, töltsd le a `gsap.min.js` és
 `ScrollTrigger.min.js` fájlokat, és cseréld a `<script src="...">` hivatkozásokat.
+
+### Közzététel & frissítés
+
+A projekt Git verziókezelés alatt áll, és GitHubon van tárolva. A fájlok
+szerkesztése után a változások közzététele:
+
+```
+git add .
+git commit -m "Fix: rövid leírás a változásról"
+git push
+```
+
+A weboldal élesítéséhez kapcsold be a **GitHub Pages**-t a repóban:
+Settings → Pages → Branch: `main` → `/ (root)` → Save.
 
 ### Megjegyzések a designhoz
 
