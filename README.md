@@ -52,7 +52,7 @@ All images live in `assets/images/` and split into two groups.
 | `fzs-logo-white.png` | Logo for the footer (white version) |
 | `signature.png` | Signature-style mark in the footer |
 | `standing.png` | Földesi Zsolt standing portrait (hero) |
-| `shirt.png` | Földesi Zsolt portrait, arms crossed (About + Contact sections) |
+| `about-portrait.png` | Cut-out portrait used in the About section |
 | `victor.png`, `imre.png`, `gaspar.png`, `andras.png` | Testimonial profile photos |
 | `dyson.png`, `volvo.png`, `szallas.png`, `velux.png`, `mazda.png`, `sanofi.png`, `unilever.png`, `aldi.png` | Brand logos (transparent PNG preferred) |
 | `favicon.png` | Browser tab icon |
@@ -62,8 +62,6 @@ All images live in `assets/images/` and split into two groups.
 | File | What it is |
 |------|------------|
 | `blog-1.png` … `blog-6.png` | Blog post cover graphics (3:2) |
-| `service-1.png` … `service-6.png` | Icons for the 6 service cards |
-| `services-art.png` | Abstract background graphic in the Services section |
 | `brick-wall.png` | Brick-wall texture behind the contact form |
 | `flag-hu.png`, `flag-en.png`, `flag-de.png` | Flags for the language switcher |
 
@@ -149,10 +147,11 @@ Settings → Pages → Branch: `main` → `/ (root)` → Save.
 
 ### Notes on the design
 
-The site was built from the supplied Figma design (node 43:905): Bai Jamjuree
-font, `#003e83` navy and `#00c7f2` cyan colours. The **"Motto"** and **"Quote"**
-sections were requested in the brief but are not in the Figma file — they were
-added, styled to match the Figma visual language.
+The site was built from the supplied Figma design (the black & white home
+page): Bai Jamjuree font, a black/white palette with a coral `#ff5f3f`
+accent. The **"Motto"** and **"Quote"** sections were requested in the brief
+but are not in the Figma file — they were added, styled to match the Figma
+visual language.
 
 ---
 
@@ -204,7 +203,7 @@ Minden kép a `assets/images/` mappában van, két csoportra osztva.
 | `fzs-logo-white.png` | Logó a footerbe (fehér változat) |
 | `signature.png` | Aláírás-jellegű jel a footerben |
 | `standing.png` | Földesi Zsolt álló portré (hero) |
-| `shirt.png` | Földesi Zsolt portré, összefont karral (About + Kapcsolat szekció) |
+| `about-portrait.png` | Kivágott portré a Bemutatkozás szekcióban |
 | `victor.png`, `imre.png`, `gaspar.png`, `andras.png` | A vélemények profilképei |
 | `dyson.png`, `volvo.png`, `szallas.png`, `velux.png`, `mazda.png`, `sanofi.png`, `unilever.png`, `aldi.png` | Márkalogók (lehetőleg átlátszó PNG) |
 | `favicon.png` | Böngészőfül-ikon |
@@ -214,8 +213,6 @@ Minden kép a `assets/images/` mappában van, két csoportra osztva.
 | Fájl | Mi ez |
 |------|-------|
 | `blog-1.png` … `blog-6.png` | Blog cikkek borítógrafikái (3:2) |
-| `service-1.png` … `service-6.png` | A 6 szolgáltatás-kártya ikonjai |
-| `services-art.png` | Absztrakt háttérgrafika a Szolgáltatások szekcióban |
 | `brick-wall.png` | Téglafal-textúra a kapcsolati űrlap mögött |
 | `flag-hu.png`, `flag-en.png`, `flag-de.png` | Zászlók a nyelvváltóhoz |
 
@@ -300,7 +297,7 @@ Settings → Pages → Branch: `main` → `/ (root)` → Save.
 
 ### Megjegyzések a designhoz
 
-A weboldal a megadott Figma terv (node 43:905) alapján készült: Bai Jamjuree
-betűtípus, `#003e83` navy és `#00c7f2` cyan színekkel. A Figma tervben nem
-szereplő, de a feladatkiírásban kért **„Mottó”** és **„Idézet”** szekciók a
-Figma vizuális stílusához igazítva kerültek be.
+A weboldal a megadott Figma terv (a fekete-fehér főoldal) alapján készült:
+Bai Jamjuree betűtípus, fekete-fehér paletta korall `#ff5f3f` kiemeléssel.
+A Figma tervben nem szereplő, de a feladatkiírásban kért **„Mottó”** és
+**„Idézet”** szekciók a Figma vizuális stílusához igazítva kerültek be.

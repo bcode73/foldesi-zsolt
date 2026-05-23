@@ -1,6 +1,6 @@
 /* ==========================================================================
    FÖLDESI ZSOLT — style.css
-   Betűtípus: Bai Jamjuree. Színek: navy #003e83, cyan #00c7f2, fehér.
+   Betűtípus: Bai Jamjuree. Színek: fekete-fehér + korall #ff5f3f kiemelés.
    Tartalom: változók › alap › elemek › navbar › szekciók › blog › reszponzív
    ========================================================================== */
 
@@ -50,20 +50,28 @@
 
 /* --- Változók ------------------------------------------------------------- */
 :root {
-  --navy:        #003e83;
-  --navy-deep:   #00255a;
-  --navy-soft:   #1a5199;
-  --ink:         #101828;
-  --cyan:        #00c7f2;
-  --coral:       #ef6a45;
+  /* Fekete-fehér paletta + korall kiemelés (Figma 13:3) */
+  --ink:         #1a1a1a;
+  --black:       #232323;
+  --charcoal:    #323232;
+  --graphite:    #464646;
+  --coral:       #ff5f3f;
+  --coral-deep:  #e44e30;
   --white:       #ffffff;
-  --mist:        #eef3fb;
-  --mist-deep:   #e3ebf7;
+  --paper:       #fbfbfd;
+  --mist:        #f1f1f3;
+  --mist-deep:   #e7e7ea;
   --gold:        #f5b301;
-  --muted:       #5b6573;
-  --muted-light: #9aa6bd;
-  --line:        rgba(16, 24, 40, 0.10);
+  --muted:       #6b6b6f;
+  --muted-light: #9a9a9f;
+  --line:        rgba(26, 26, 26, 0.12);
   --line-dark:   rgba(255, 255, 255, 0.16);
+
+  /* Visszafelé kompatibilis aliasok (régi változónevek a kódban) */
+  --navy:        #232323;
+  --navy-deep:   #1a1a1a;
+  --navy-soft:   #464646;
+  --cyan:        #ff5f3f;
 
   --font: "Bai Jamjuree", "Segoe UI", Tahoma, sans-serif;
 
@@ -345,7 +353,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 @media (min-width: 881px) { .nav-backdrop { display: none; } }
 
 /* ==========================================================================
-   HERO
+   HERO — fekete-fehér, teljes szélességű fotó (Figma 13:3)
    ========================================================================== */
 .hero {
   position: relative;
@@ -354,91 +362,82 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   align-items: stretch;
   padding-top: var(--nav-h);
   overflow: hidden;
-  background:
-    radial-gradient(60% 50% at 15% 30%, rgba(0, 199, 242, 0.10), transparent 70%),
-    radial-gradient(50% 60% at 85% 70%, rgba(0, 62, 131, 0.10), transparent 70%),
-    var(--white);
+  background: var(--paper);
 }
-.hero__wave {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  opacity: 0.5;
-}
+.hero__wave { display: none; }
 .hero__grid {
   position: relative;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: end;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
   width: 100%;
 }
 .hero__content {
-  padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 7vw, 5rem);
+  padding-block: clamp(2rem, 6vw, 5rem) clamp(3rem, 7vw, 5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .hero__stats {
   display: flex;
-  gap: clamp(2rem, 4vw, 3.5rem);
-  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  gap: clamp(2rem, 4vw, 3.4rem);
+  margin-bottom: clamp(1.8rem, 4vw, 3rem);
 }
 .hero__stat .num {
-  font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+  font-size: clamp(2.1rem, 3.4vw, 3.2rem);
   font-weight: 600;
-  line-height: 1;
-  color: var(--navy);
+  line-height: 1.3;
+  color: var(--graphite);
 }
 .hero__stat .label {
-  margin-top: 0.4rem;
-  font-size: 0.92rem;
-  color: var(--ink);
+  margin-top: 0.2rem;
+  font-size: 1.05rem;
+  color: var(--graphite);
   max-width: 13ch;
 }
 .hero__name {
-  font-size: clamp(2.9rem, 8.5vw, 7.6rem);
-  font-weight: 200;
-  line-height: 0.98;
-  letter-spacing: 0.02em;
+  font-size: clamp(2.4rem, 5.4vw, 5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--graphite);
+  white-space: nowrap;
 }
-.hero__name .word { display: block; overflow: hidden; }
-.hero__name .word > span { display: block; }
+.hero__name .word { display: inline; overflow: visible; }
+.hero__name .word > span { display: inline; }
+.hero__name .word + .word::before { content: " "; }
 .hero__subtitle {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.3rem;
-  margin-top: clamp(1.2rem, 2.5vw, 2rem);
+  gap: clamp(1rem, 2.5vw, 2.4rem);
+  margin-top: clamp(1rem, 2vw, 1.6rem);
 }
 .hero__subtitle span {
-  font-size: clamp(1rem, 1.5vw, 1.35rem);
-  font-weight: 500;
-  color: var(--navy);
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  color: var(--graphite);
 }
 .hero__subtitle i {
-  width: 1px; height: 22px;
+  width: 1px; height: 26px;
   background: var(--line);
   display: block;
 }
 .hero__photo {
   position: relative;
-  align-self: end;
-  height: 100%;
-  min-height: 60vh;
+  align-self: stretch;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-right: calc(50% - 50vw);
 }
 .hero__photo img {
-  height: 92%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: bottom;
-  filter: grayscale(1) contrast(1.05);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  filter: grayscale(1) contrast(1.04);
 }
 
 /* Görgetés-jelző */
@@ -604,29 +603,18 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
-.about__media { position: relative; align-self: stretch; }
-.about__media-frame {
+.about__media { position: relative; align-self: end; }
+.about__media-cutout {
   position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--mist);
 }
-.about__media-frame img {
+.about__media-cutout img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  object-fit: contain;
   filter: grayscale(1);
+  display: block;
 }
-.about__media-outline {
-  position: absolute;
-  inset: -14px auto -14px -14px;
-  width: 70%;
-  border: 2px solid var(--navy);
-  border-radius: var(--radius);
-  z-index: -1;
-}
-.about__text > p { color: var(--navy); margin-bottom: 1.1rem; line-height: 1.65; }
+.about__text > p { color: var(--graphite); margin-bottom: 1.1rem; line-height: 1.65; }
 .about__list { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1.1rem; }
 .about__list li {
   display: flex;
@@ -709,9 +697,10 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 .service-card:hover::after { opacity: 1; }
 .service-card__icon {
-  width: 84px;
-  height: 84px;
-  object-fit: contain;
+  width: 48px;
+  height: 48px;
+  color: var(--white);
+  flex-shrink: 0;
 }
 .service-card__title {
   position: relative;
@@ -1096,7 +1085,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   font-weight: 500;
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23003e83' stroke-width='2'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23323232' stroke-width='2'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1.1rem center;
 }
@@ -1426,7 +1415,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   }
   .hero__content { order: 1; padding-top: 1rem; }
   .about__grid { grid-template-columns: 1fr; }
-  .about__media-outline { display: none; }
   .counters__grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
   .contact__photo { min-height: 0; height: 320px; }

@@ -23,25 +23,12 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /* --- Hero belépő --------------------------------------------------------- */
-  var heroWords = document.querySelectorAll(".hero__name .word > span");
-  var tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  /* --- Hero belépő (csak kép, szöveg animáció nélkül) --------------------- */
+  gsap.from(".hero__photo img", { opacity: 0, duration: 1, ease: "power3.out" });
 
-  tl.from(".hero__stats .hero__stat", { y: 24, opacity: 0, stagger: 0.12, duration: 0.7 })
-    .from(heroWords, { yPercent: 110, duration: 0.9, stagger: 0.1 }, "-=0.3")
-    .from(".hero__subtitle", { y: 20, opacity: 0, duration: 0.7 }, "-=0.4")
-    .from(".hero__photo img", { y: 40, opacity: 0, duration: 1 }, "-=0.8")
-    .from(".scroll-cue", { opacity: 0, duration: 0.6 }, "-=0.3");
-
-  /* --- Általános scroll reveal (a szolgáltatás-kártyák kivételével) ------- */
+  /* --- Szöveges elemek: animáció nélkül, azonnal láthatók ----------------- */
   document.querySelectorAll(".reveal:not(.service-card)").forEach(function (el) {
-    gsap.to(el, {
-      opacity: 1,
-      y: 0,
-      duration: 0.9,
-      ease: "power3.out",
-      scrollTrigger: { trigger: el, start: "top 88%" }
-    });
+    gsap.set(el, { opacity: 1, y: 0 });
   });
 
   /* --- Szolgáltatás-kártyák — lépcsőzetes belépő -------------------------- */
@@ -172,7 +159,7 @@
     ScrollTrigger.refresh();
   }, 2500);
 
-  initTypewriter(false);
+  initTypewriter(true);
 
   /* ======================================================================
      Írógép-effekt — a footer "HÍVJ / ÍRJ!" felirat
