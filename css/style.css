@@ -1415,6 +1415,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   }
   .hero__content { order: 1; padding-top: 1rem; }
   .about__grid { grid-template-columns: 1fr; }
+  .about__media { max-width: 360px; margin-inline: auto; }
+  .about__media-cutout img { width: 100%; }
   .counters__grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
   .contact__photo { min-height: 0; height: 320px; }
