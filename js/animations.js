@@ -17,14 +17,31 @@
       el.style.transform = "none";
       el.style.clipPath = "none";
     });
+    var firstWord = document.querySelector(".hero__word");
+    if (firstWord) firstWord.classList.add("is-active");
     initTypewriter(true);
     return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /* --- Hero belépő (csak kép, szöveg animáció nélkül) --------------------- */
-  gsap.from(".hero__photo img", { opacity: 0, duration: 1, ease: "power3.out" });
+  /* --- Hero belépő: kép halkan beúszik, fejléc felemelkedik --------------- */
+  gsap.from(".hero__photo img", { opacity: 0, x: 40, duration: 1.2, ease: "power3.out" });
+  gsap.from(".hero__eyebrow, .hero__headline, .hero__meta", {
+    opacity: 0, y: 30, duration: 0.9, stagger: 0.12, ease: "power3.out", delay: 0.15
+  });
+
+  /* --- Hero forgó szó: share / growth / reach / revenue ------------------- */
+  (function rotateHeroWord() {
+    var words = gsap.utils.toArray(".hero__word");
+    if (words.length < 2) return;
+    var i = 0;
+    setInterval(function () {
+      words[i].classList.remove("is-active");
+      i = (i + 1) % words.length;
+      words[i].classList.add("is-active");
+    }, 2200);
+  })();
 
   /* --- Szöveges elemek: animáció nélkül, azonnal láthatók ----------------- */
   document.querySelectorAll(".reveal:not(.service-row):not(.brand-row)").forEach(function (el) {
