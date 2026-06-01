@@ -897,29 +897,22 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 .contact__info-item a:hover { color: var(--accent); }
 
-/* photo (light) on the left, dark form on the right; the dark side bleeds
-   downward and is met seamlessly by the footer below — one continuous surface */
+/* photo left, dark form right — full-bleed band, no white on either side.
+   The grid breaks out of the container to span the full viewport width;
+   photo fills the left half to the screen edge, dark fills the right half. */
 .contact__grid {
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
+  grid-template-columns: 1fr 1fr;
   align-items: stretch;
   gap: 0;
   margin-top: clamp(1.5rem, 3vw, 2.5rem);
-  position: relative;
-}
-.contact__grid::after {
-  content: "";
-  position: absolute;
-  left: 41%;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: var(--ink);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .contact__photo {
   position: relative;
-  align-self: end;
-  height: clamp(360px, 42vw, 560px);
+  min-height: clamp(420px, 48vw, 600px);
   overflow: hidden;
 }
 .contact__photo img {
@@ -931,13 +924,17 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   object-position: center top;
   filter: grayscale(1);
 }
-
-/* Űrlap — sötét, sarkok nélkül, hogy a footerbe folyjon */
+/* dark form fills its half to the right edge; content kept readable via inner max-width */
 .contact-form {
   background: var(--ink);
-  padding: clamp(2rem, 4vw, 3.4rem) clamp(1.6rem, 3vw, 2.8rem) clamp(3rem, 6vw, 5rem);
   color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 3.4rem) clamp(1.8rem, 4vw, 3.5rem);
 }
+.contact-form > * { width: 100%; max-width: 560px; }
+
 .contact-form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
