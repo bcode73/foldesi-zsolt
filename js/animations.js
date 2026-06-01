@@ -27,29 +27,9 @@
   gsap.from(".hero__photo img", { opacity: 0, duration: 1, ease: "power3.out" });
 
   /* --- Szöveges elemek: animáció nélkül, azonnal láthatók ----------------- */
-  document.querySelectorAll(".reveal:not(.service-card)").forEach(function (el) {
+  document.querySelectorAll(".reveal:not(.service-row):not(.brand-row)").forEach(function (el) {
     gsap.set(el, { opacity: 1, y: 0 });
   });
-
-  /* --- Szolgáltatás-kártyák — lépcsőzetes belépő -------------------------- */
-  var svcCards = gsap.utils.toArray(".service-card");
-  if (svcCards.length) {
-    gsap.set(svcCards, { y: 50, scale: 0.96 });
-    ScrollTrigger.batch(svcCards, {
-      start: "top 86%",
-      onEnter: function (batch) {
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power3.out",
-          overwrite: true
-        });
-      }
-    });
-  }
 
   /* --- Kép-reveal (clip-path) ---------------------------------------------- */
   document.querySelectorAll(".reveal-img").forEach(function (el) {
@@ -61,24 +41,67 @@
     });
   });
 
-  /* --- Szolgáltatás-kártyák — lépcsőzetes belépő --------------------------- */
-  var serviceCards = document.querySelectorAll(".service-card");
-  if (serviceCards.length) {
-    gsap.set(serviceCards, { opacity: 0, y: 56 });
-    ScrollTrigger.batch(serviceCards, {
-      start: "top 86%",
+  /* --- Szolgáltatás-sorok és márka-sorok: lépcsőzetes belépő -------------- */
+  function revealRows(selector) {
+    var rows = gsap.utils.toArray(selector);
+    if (!rows.length) return;
+    gsap.set(rows, { opacity: 0, y: 40 });
+    ScrollTrigger.batch(rows, {
+      start: "top 88%",
       onEnter: function (batch) {
         gsap.to(batch, {
           opacity: 1,
           y: 0,
           duration: 0.7,
-          stagger: 0.12,
+          stagger: 0.1,
           ease: "power3.out",
           overwrite: true
         });
       }
     });
   }
+  revealRows(".service-row");
+  revealRows(".brand-row");
+
+  /* --- About: csomópont-vonalak berajzolása, majd a dobozok megjelenése --- */
+  (function aboutNodes() {
+    var map = document.querySelector(".about__map");
+    if (!map) return;
+    var lines = map.querySelectorAll(".about__lines line");
+    var nodes = map.querySelectorAll(".node");
+    var photo = map.querySelector(".about__photo");
+
+    lines.forEach(function (ln) {
+      var len = ln.getTotalLength();
+      ln.style.strokeDasharray = len;
+      ln.style.strokeDashoffset = len;
+    });
+    gsap.set(nodes, { opacity: 0, scale: 0.8 });
+    gsap.set(photo, { opacity: 0, scale: 0.9 });
+
+    ScrollTrigger.create({
+      trigger: map,
+      start: "top 78%",
+      once: true,
+      onEnter: function () {
+        gsap.to(photo, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" });
+        gsap.to(lines, {
+          strokeDashoffset: 0,
+          duration: 0.9,
+          ease: "power2.inOut",
+          stagger: 0.08
+        });
+        gsap.to(nodes, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.08,
+          delay: 0.3,
+          ease: "back.out(1.6)"
+        });
+      }
+    });
+  })();
 
   /* --- Számlálók ----------------------------------------------------------- */
   document.querySelectorAll(".count").forEach(function (el) {
@@ -95,41 +118,6 @@
           ease: "power2.out",
           onUpdate: function () { el.textContent = Math.round(obj.val); }
         });
-      }
-    });
-  });
-
-  /* --- Márka-sorok: végtelen marquee + görgetésre gyorsul ------------------ */
-  document.querySelectorAll(".brands__row").forEach(function (row) {
-    var dir = row.getAttribute("data-direction") === "left" ? 1 : -1;
-    var loopWidth = row.scrollWidth / 2; // a tartalom fele = egy teljes szett
-    if (loopWidth <= 0) return;
-
-    var startX = dir < 0 ? 0 : -loopWidth;
-    gsap.set(row, { x: startX });
-
-    var drift = gsap.to(row, {
-      x: dir < 0 ? -loopWidth : 0,
-      duration: 38,
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: function (x) {
-          var v = parseFloat(x) % loopWidth;
-          if (v > 0) v -= loopWidth;
-          return v + "px";
-        }
-      }
-    });
-
-    /* görgetési sebesség: a scroll picit „meglöki" a sort */
-    ScrollTrigger.create({
-      trigger: ".brands",
-      start: "top bottom",
-      end: "bottom top",
-      onUpdate: function (self) {
-        var boost = 1 + Math.min(Math.abs(self.getVelocity()) / 600, 4);
-        gsap.to(drift, { timeScale: boost * dir * -1 < 0 ? boost : boost, duration: 0.4, overwrite: true });
       }
     });
   });
@@ -151,7 +139,7 @@
      biztonsági háló: ha valami 2,5 mp után is rejtve maradna, megjelenítjük. */
   window.addEventListener("load", function () { ScrollTrigger.refresh(); });
   setTimeout(function () {
-    document.querySelectorAll(".reveal, .reveal-img, .service-card").forEach(function (el) {
+    document.querySelectorAll(".reveal, .reveal-img, .service-row, .brand-row").forEach(function (el) {
       if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
         gsap.set(el, { opacity: 1, y: 0, scale: 1, clipPath: "none" });
       }
