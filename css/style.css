@@ -198,8 +198,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .navbar.is-scrolled .btn--outline:hover,
 .navbar.is-menu-open .btn--outline:hover { color: var(--white); }
 
-.btn--light { background: var(--white); color: var(--navy); }
-.btn--light:hover { background: var(--cyan); color: var(--navy); }
+.btn--light { background: var(--white); color: var(--ink); }
+.btn--light:hover { background: var(--accent); color: var(--white); }
 
 /* ==========================================================================
    NAVBAR
@@ -824,8 +824,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     border-color 0.3s ease;
 }
 .slider-nav button:hover {
-  background: var(--navy);
-  border-color: var(--navy);
+  background: var(--ink);
+  border-color: var(--ink);
   color: var(--white);
   transform: scale(1.05);
 }
@@ -868,14 +868,12 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
    CONTACT — kapcsolati adatok + űrlap
    ========================================================================== */
 .contact {
-  background:
-    radial-gradient(45% 45% at 88% 12%, rgba(0,199,242,0.10), transparent 70%),
-    var(--white);
+  background: var(--white);
   position: relative;
-  overflow: hidden;
+  padding-bottom: 0;
 }
 .contact__head { text-align: center; max-width: 620px; margin-inline: auto; }
-.contact__head .h-section { color: var(--navy); margin-block: 0.7rem 1rem; }
+.contact__head .h-section { color: var(--ink); margin-block: 0.7rem 1rem; }
 .contact__head .lead { margin-inline: auto; }
 
 .contact__info {
@@ -894,21 +892,34 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .contact__info-item a, .contact__info-item span {
   display: block;
   margin-top: 0.3rem;
-  color: var(--navy);
+  color: var(--graphite);
   font-weight: 500;
 }
-.contact__info-item a:hover { color: var(--cyan); }
+.contact__info-item a:hover { color: var(--accent); }
 
+/* photo (light) on the left, dark form on the right; the dark side bleeds
+   downward and is met seamlessly by the footer below — one continuous surface */
 .contact__grid {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
   align-items: stretch;
-  gap: clamp(1.5rem, 3vw, 3rem);
+  gap: 0;
   margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  position: relative;
+}
+.contact__grid::after {
+  content: "";
+  position: absolute;
+  left: 41%;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ink);
 }
 .contact__photo {
   position: relative;
-  border-radius: var(--radius);
+  align-self: end;
+  height: clamp(360px, 42vw, 560px);
   overflow: hidden;
 }
 .contact__photo img {
@@ -918,13 +929,13 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  filter: grayscale(1);
 }
 
-/* Űrlap */
+/* Űrlap — sötét, sarkok nélkül, hogy a footerbe folyjon */
 .contact-form {
-  background: var(--navy);
-  border-radius: var(--radius);
-  padding: clamp(1.6rem, 3vw, 2.8rem);
+  background: var(--ink);
+  padding: clamp(2rem, 4vw, 3.4rem) clamp(1.6rem, 3vw, 2.8rem) clamp(3rem, 6vw, 5rem);
   color: var(--white);
 }
 .contact-form__row {
@@ -941,7 +952,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   display: grid;
   place-items: center;
   background: var(--white);
-  color: var(--navy);
+  color: var(--ink);
   font-weight: 600;
   font-size: 0.9rem;
   border-radius: 8px;
@@ -957,7 +968,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 .field textarea { min-height: 132px; resize: vertical; }
 .field input::placeholder, .field textarea::placeholder { color: var(--muted-light); }
-.field input:focus, .field textarea:focus { outline: none; border-color: var(--cyan); }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
 
 .contact-form__check {
   display: flex;
@@ -971,9 +982,9 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   flex: 0 0 18px;
   width: 18px; height: 18px;
   margin-top: 2px;
-  accent-color: var(--cyan);
+  accent-color: var(--accent);
 }
-.contact-form__check a { color: var(--cyan); text-decoration: underline; }
+.contact-form__check a { color: var(--accent); text-decoration: underline; }
 
 .contact-form__footer {
   display: flex;
@@ -1004,7 +1015,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
    FOOTER — óriás "HÍVJ / ÍRJ" + adatok
    ========================================================================== */
 .footer {
-  background: var(--navy);
+  background: var(--ink);
   color: var(--white);
   padding-block: clamp(3rem, 6vw, 5rem) 2rem;
   position: relative;
@@ -1024,23 +1035,25 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 .footer__headline {
   font-size: clamp(3.4rem, 13vw, 11rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
   padding-top: 0.14em;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
-.footer__type { display: inline-block; }
-.footer__type .tw-word { border-bottom: 0.07em solid transparent; }
-.footer__type .tw-word.is-underline { border-bottom-color: var(--cyan); }
+.footer__type { display: inline-block; cursor: default; }
+.footer__type .tw-word { border-bottom: 0.07em solid transparent; transition: color 0.3s ease; }
+.footer__type .tw-word.is-underline { border-bottom-color: var(--accent); }
 .footer__type .caret {
   display: inline-block;
   width: 0.06em;
   margin-left: 0.04em;
-  background: var(--cyan);
+  background: var(--accent);
   animation: caret 0.9s steps(1) infinite;
 }
 @keyframes caret { 50% { opacity: 0; } }
+/* hover: the live word picks up the accent colour */
+.footer__headline:hover .tw-word.is-underline { color: var(--accent); }
 
 .footer__contact { display: flex; flex-direction: column; gap: 0.9rem; padding-top: 1.4rem; }
 .footer__contact a {
@@ -1051,8 +1064,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   color: rgba(255, 255, 255, 0.85);
   transition: color 0.25s ease;
 }
-.footer__contact a:hover { color: var(--cyan); }
-.footer__contact svg { flex: 0 0 20px; color: var(--cyan); }
+.footer__contact a:hover { color: var(--accent); }
+.footer__contact svg { flex: 0 0 20px; color: var(--accent); }
 
 .footer__bottom {
   display: flex;
@@ -1474,7 +1487,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   .about__map { max-width: 460px; margin-inline: auto; order: 2; }
   .counters__grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
-  .contact__photo { min-height: 0; height: 320px; }
+  .contact__grid::after { display: none; }
+  .contact__photo { height: 300px; align-self: stretch; }
   .testimonials__head { align-items: flex-start; }
 }
 
