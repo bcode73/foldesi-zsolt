@@ -35,11 +35,14 @@
   (function rotateHeroWord() {
     var words = gsap.utils.toArray(".hero__word");
     if (words.length < 2) return;
-    var i = 0;
+    var active = 0;
+    words.forEach(function (w, idx) {
+      w.classList.toggle("is-active", idx === active);
+    });
     setInterval(function () {
-      words[i].classList.remove("is-active");
-      i = (i + 1) % words.length;
-      words[i].classList.add("is-active");
+      words[active].classList.remove("is-active");
+      active = (active + 1) % words.length;
+      words[active].classList.add("is-active");
     }, 2200);
   })();
 
