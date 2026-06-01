@@ -58,42 +58,40 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <div class="hero__stats">
-            <div class="hero__stat">
-              <div class="num"><span data-translate="hero.stat1num">15+</span></div>
-              <div class="label" data-translate="hero.stat1label">Év tapasztalat</div>
-            </div>
-            <div class="hero__stat">
-              <div class="num"><span data-translate="hero.stat2num">46</span></div>
-              <div class="label" data-translate="hero.stat2label">Országban</div>
-            </div>
-          </div>
+      <div class="hero__photo">
+        <img src="assets/images/standing-cutout.png" width="778" height="1034"
+             alt="Földesi Zsolt portrait" fetchpriority="high" />
+      </div>
 
-          <h1 class="hero__name" aria-label="Földesi Zsolt">
-            <span class="word"><span>Földesi</span></span>
-            <span class="word"><span>Zsolt</span></span>
-          </h1>
+      <div class="container hero__inner">
+        <span class="hero__eyebrow" data-translate="hero.eyebrow">Marketing &middot; Technology &middot; Strategy</span>
 
-          <p class="hero__subtitle">
-            <span data-translate="hero.subtitle1">Marketing</span>
-            <i aria-hidden="true"></i>
-            <span data-translate="hero.subtitle2">Technológia</span>
-            <i aria-hidden="true"></i>
-            <span data-translate="hero.subtitle3">Stratégia</span>
-          </p>
-        </div>
+        <h1 class="hero__headline">
+          <span class="hero__line">I build</span>
+          <span class="hero__line">
+            market
+            <span class="hero__rotator" aria-hidden="true">
+              <span class="hero__word is-active">share,</span>
+              <span class="hero__word">growth,</span>
+              <span class="hero__word">reach,</span>
+              <span class="hero__word">revenue,</span>
+            </span>
+            <span class="visually-hidden">market share, growth, reach and revenue</span>
+          </span>
+          <span class="hero__line">and profit.</span>
+        </h1>
 
-        <!-- Hero photo: assets/images/standing.png -->
-        <div class="hero__photo">
-          <img src="assets/images/standing.png" width="900" height="1200"
-               alt="Földesi Zsolt portré" fetchpriority="high" />
+        <div class="hero__meta">
+          <span class="hero__name">Földesi Zsolt</span>
+          <span class="hero__stats">
+            <span><strong data-translate="hero.stat1num">15+</strong> <span data-translate="hero.stat1label">years</span></span>
+            <span><strong data-translate="hero.stat2num">46</strong> <span data-translate="hero.stat2label">countries</span></span>
+          </span>
         </div>
       </div>
 
       <a href="#counters" class="scroll-cue" aria-label="Scroll down">
-        <span data-translate="hero.scroll">Görgess lejjebb</span>
+        <span data-translate="hero.scroll">Scroll</span>
         <span class="scroll-cue__chevrons" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -104,7 +102,7 @@
     <section class="motto">
       <div class="container">
         <p class="motto__text reveal" data-translate="motto.text">
-          Ismerd a piacod, segítsd az ügyfeled, növeld a profitod.
+          Know your market, help your client, <b>scale your profit.</b>
         </p>
       </div>
     </section>
