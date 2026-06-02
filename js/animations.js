@@ -167,7 +167,7 @@
     ScrollTrigger.refresh();
   }, 2500);
 
-  initTypewriter(true);
+  initTypewriter(false);
 
   /* ======================================================================
      Írógép-effekt — a footer "HÍVJ / ÍRJ!" felirat
