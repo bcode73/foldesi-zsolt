@@ -23,6 +23,7 @@ const translations = {
       contact: "Kapcsolat"
     },
     hero: {
+      eyebrow: "Marketing · Technológia · Stratégia",
       stat1num: "15+", stat1label: "Év tapasztalat",
       stat2num: "46",  stat2label: "Országban",
       subtitle1: "Marketing", subtitle2: "Technológia", subtitle3: "Stratégia",
@@ -163,6 +164,7 @@ const translations = {
       services: "How can I help", blog: "Blog", contact: "Contact Us"
     },
     hero: {
+      eyebrow: "Marketing · Technology · Strategy",
       stat1num: "15+", stat1label: "Years of experience",
       stat2num: "46",  stat2label: "Countries",
       subtitle1: "Marketing", subtitle2: "Technology", subtitle3: "Strategy",
@@ -303,6 +305,7 @@ const translations = {
       services: "Wie ich helfe", blog: "Blog", contact: "Kontakt"
     },
     hero: {
+      eyebrow: "Marketing · Technologie · Strategie",
       stat1num: "15+", stat1label: "Jahre Erfahrung",
       stat2num: "46",  stat2label: "Ländern",
       subtitle1: "Marketing", subtitle2: "Technologie", subtitle3: "Strategie",
