@@ -60,7 +60,13 @@ const translations = {
       s3: "Social jelenlét, ami üzleti célt szolgál",
       s4: "Analitika & döntéstámogatás",
       s5: "AI – Intelligens folyamatok és automatizáció",
-      s6: "Digitális alapok: weboldalak és szoftverek"
+      s6: "Digitális alapok: weboldalak és szoftverek",
+      d1: "Bizalmat építő tartalom, olyan rendszerekkel összekötve, amelyek az első kattintástól a lezárásig végigkísérik az ügyfelet – így te az ügyfeleidre koncentrálhatsz.",
+      d2: "Legyél ott, ahol a döntések születnek. Nem csak forgalom, hanem olyan érdeklődők, akik valóban értéket jelentenek az üzletnek. Keresőben és fizetett közösségi felületeken.",
+      d3: "A social nem a posztolásról szól, hanem a bizalom és a kapcsolatok építéséről, amelyek valódi üzleti eredménnyé válnak.",
+      d4: "Csak azt tudod fejleszteni, amit mérsz. A jó mérés minden növekedési döntés alapja.",
+      d5: "Adatrögzítés, elemzés, vezetői összefoglaló – csak néhány azokból a feladatokból, amelyek egyetlen kattintásra egyszerűsödhetnek.",
+      d6: "A marketing csak stabil alapokon működik. Logikus, átlátható és gyors weboldalakat és egyedi eszközöket építek."
     },
     quote: {
       pre: "Van egy víziód?",
@@ -194,7 +200,13 @@ const translations = {
       s3: "Social presence that serves business goals",
       s4: "Analytics & decision support",
       s5: "AI – Intelligent processes and automation",
-      s6: "Digital foundations: websites and software"
+      s6: "Digital foundations: websites and software",
+      d1: "Content that builds trust, joined up by frameworks that carry the customer from the first click to the close, so you can focus on serving clients.",
+      d2: "Be found where decisions are made. Not just traffic, but the kind of prospects that are worth something to the business. Search and paid social.",
+      d3: "Social isn’t about posting. It’s about building trust and relationships that turn into real business outcomes.",
+      d4: "You can only improve what you measure. Good measurement is the foundation every growth decision sits on.",
+      d5: "Data entry, analysis, an executive summary. Just a few of the things that can come down to a single click.",
+      d6: "Marketing only works on solid ground. I build websites and custom tools that are logical, clear and fast."
     },
     quote: {
       pre: "Got a vision?",
@@ -328,7 +340,13 @@ const translations = {
       s3: "Social-Präsenz mit Geschäftszielen",
       s4: "Analytik & Entscheidungshilfe",
       s5: "KI – Intelligente Prozesse und Automatisierung",
-      s6: "Digitale Grundlagen: Websites und Software"
+      s6: "Digitale Grundlagen: Websites und Software",
+      d1: "Inhalte, die Vertrauen schaffen – verbunden mit Systemen, die den Kunden vom ersten Klick bis zum Abschluss begleiten, damit du dich auf deine Kunden konzentrieren kannst.",
+      d2: "Sei dort sichtbar, wo Entscheidungen fallen. Nicht nur Traffic, sondern Interessenten, die für das Geschäft wirklich wertvoll sind. In der Suche und über bezahlte Social-Kanäle.",
+      d3: "Social bedeutet nicht einfach Posten. Es geht um Vertrauen und Beziehungen, die zu echten Geschäftsergebnissen werden.",
+      d4: "Du kannst nur verbessern, was du misst. Gute Messung ist die Grundlage jeder Wachstumsentscheidung.",
+      d5: "Dateneingabe, Analyse, eine Management-Zusammenfassung. Nur einige der Dinge, die sich auf einen einzigen Klick reduzieren lassen.",
+      d6: "Marketing funktioniert nur auf solidem Fundament. Ich baue logische, klare und schnelle Websites und maßgeschneiderte Tools."
     },
     quote: {
       pre: "Hast du eine Vision?",
