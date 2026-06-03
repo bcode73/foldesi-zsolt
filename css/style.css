@@ -55,10 +55,11 @@
   --black:       #232323;
   --charcoal:    #323232;
   --graphite:    #464646;
-  --coral:       #e8331c;
-  --coral-deep:  #c82813;
-  --accent:      #e8331c;
-  --accent-deep: #c82813;
+  --coral:       var(--accent);
+  --coral-deep:  var(--accent-deep);
+  --accent:      #e11025;
+  --accent-deep: #b00f24;
+  --accent-on-dark: #d10139;
   --white:       #ffffff;
   --paper:       #fbfbfd;
   --mist:        #f1f1f3;
@@ -73,7 +74,7 @@
   --navy:        #232323;
   --navy-deep:   #1a1a1a;
   --navy-soft:   #464646;
-  --cyan:        #e8331c;
+  --cyan:        var(--accent);
 
   --font: "Bai Jamjuree", "Segoe UI", Tahoma, sans-serif;
 
@@ -120,6 +121,14 @@ input, textarea { font: inherit; color: inherit; }
 
 .section { padding-block: clamp(4.5rem, 9vw, 8.5rem); position: relative; }
 .section--dark { background: var(--navy); color: var(--white); }
+
+/* Sötét felületeken mélyebb piros (#d10139); világos és szekció-háttéren #e11025 */
+.section--dark,
+.hero,
+.quote,
+.contact__grid,
+.cta-band,
+.footer { --accent: var(--accent-on-dark); }
 
 .eyebrow {
   display: inline-flex;
