@@ -155,10 +155,10 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   line-height: 1.1;
 }
 .h-section {
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
 }
 .h-section .accent { color: var(--cyan); }
 
@@ -648,15 +648,17 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 
 .brand-row__num {
   grid-area: num;
-  font-size: 0.85rem;
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
   font-weight: 600;
-  color: var(--accent);
-  padding-top: 0.45rem;
+  color: var(--muted-light);
+  padding-top: 0.5rem;
+  transition: color 0.3s ease;
 }
 .brand-row__name {
   grid-area: name;
-  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
   font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: -0.01em;
   color: var(--ink);
   transition: color 0.3s ease;
@@ -686,6 +688,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 
 .brand-row:hover { padding-left: 1.4rem; }
+.brand-row:hover .brand-row__num { color: var(--accent); }
 .brand-row:hover .brand-row__name { color: var(--accent); }
 .brand-row:hover .brand-row__thumb { opacity: 1; transform: translateY(-50%) translateX(0); }
 
