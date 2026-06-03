@@ -628,9 +628,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 
 .brand-index {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: clamp(2rem, 5vw, 5rem);
 }
 .brand-row {
   position: relative;
@@ -639,13 +636,12 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   grid-template-areas:
     "num name"
     "num role";
-  column-gap: 1.4rem;
+  column-gap: clamp(1.4rem, 2.5vw, 2.4rem);
   align-items: baseline;
-  padding: clamp(1.2rem, 2vw, 1.6rem) 0;
+  padding: clamp(1.6rem, 2.8vw, 2.4rem) 0;
   border-top: 1px solid var(--line);
   transition: padding-left 0.4s var(--ease);
 }
-.brand-index > .brand-row:nth-last-child(2),
 .brand-index > .brand-row:last-child { border-bottom: 1px solid var(--line); }
 
 .brand-row__num {
@@ -658,7 +654,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 .brand-row__name {
   grid-area: name;
-  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -730,9 +726,9 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--accent-on-dark);
+  background: var(--mist);
 }
-.about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(1) contrast(1.1); mix-blend-mode: luminosity; }
+.about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(1); }
 
 .node {
   position: absolute;
