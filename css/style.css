@@ -1566,4 +1566,23 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   .blog-tools { flex-direction: column; }
   .blog-tools select { width: 100%; }
   .search-field { flex: none; width: 100%; }
+
+  /* About mind-map -> centered photo + wrapped pills (radial overflows on phones) */
+  .about__map { aspect-ratio: auto; text-align: center; }
+  .about__lines { display: none; }
+  .about__photo {
+    position: relative;
+    top: auto; left: auto;
+    transform: none;
+    width: min(240px, 64%);
+    margin: 0 auto 1.4rem;
+  }
+  .node {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: inline-block;
+    margin: 0.3rem;
+  }
 }
