@@ -728,9 +728,9 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--mist);
+  background: var(--accent-on-dark);
 }
-.about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(1); }
+.about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(1) contrast(1.1); mix-blend-mode: luminosity; }
 
 .node {
   position: absolute;
@@ -753,10 +753,10 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .node--br { top: 86%; left: 77%; }
 
 .about__heading {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
   font-weight: 700;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: var(--white);
   margin-bottom: 1.4rem;
 }
