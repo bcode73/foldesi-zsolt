@@ -60,8 +60,10 @@
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
       <div class="hero__photo">
-        <img src="assets/images/hero-ai.jpg"
-             alt="Földesi Zsolt" fetchpriority="high" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/images/hero-ai-mobile.jpg" />
+          <img src="assets/images/hero-ai.jpg" alt="Földesi Zsolt" fetchpriority="high" />
+        </picture>
       </div>
 
       <div class="container hero__inner">
