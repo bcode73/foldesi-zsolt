@@ -1607,3 +1607,57 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .brand-row__num { color: var(--muted-light); }
 .brand-row__name { color: var(--white); }
 .brand-row__role { color: var(--muted-light); }
+
+/* ===== BRANDS — centered floating preview ===== */
+.brand-row__thumb { display: none; }
+.brand-preview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: clamp(180px, 24vw, 320px);
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.4rem, 3vw, 2.6rem);
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 60;
+  transition: opacity 0.4s var(--ease), transform 0.55s var(--ease);
+}
+.brand-preview.is-active { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.brand-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.brand-row.is-active { padding-left: 1.4rem; }
+.brand-row.is-active .brand-row__num,
+.brand-row.is-active .brand-row__name { color: var(--accent); }
+@media (max-width: 768px) {
+  .brand-preview { top: 32%; width: clamp(150px, 52vw, 230px); }
+}
+
+/* ===== ABOVE-FOLD FIXES — black logo, highlighted contact, no flag ===== */
+.logo__img--light { display: none; }
+.logo__img--dark { display: block; height: 76px; }
+
+.nav-links .btn--outline {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+.navbar.is-scrolled .nav-links .btn--outline,
+.navbar.is-menu-open .nav-links .btn--outline {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+.nav-links .btn--outline:hover,
+.navbar.is-scrolled .nav-links .btn--outline:hover,
+.navbar.is-menu-open .nav-links .btn--outline:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.lang-flag { display: none; }
