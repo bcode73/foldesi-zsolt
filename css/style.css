@@ -573,6 +573,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   white-space: nowrap;
 }
 
+.banner-short { display: none; }
+
 /* Görgetés-jelző */
 .scroll-cue {
   position: absolute;
@@ -1593,13 +1595,19 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   .waitlist-banner {
     font-size: 0.78rem;
     padding: 0.6rem 2.5rem 0.6rem 1rem;
-    --banner-h: 56px;
+    --banner-h: 44px;
   }
   .waitlist-banner__text {
     gap: 0.4rem;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
   }
+  .banner-full { display: none; }
+  .banner-short { display: inline; }
+  .waitlist-banner__text strong { white-space: nowrap; }
   .nav-links {
     position: fixed;
     top: 0;
