@@ -4,6 +4,67 @@
    Tartalom: változók › alap › elemek › navbar › szekciók › blog › reszponzív
    ========================================================================== */
 
+/* ==========================================================================
+   WAITLIST BANNER
+   ========================================================================== */
+.waitlist-banner {
+  position: relative;
+  z-index: 200;
+  background: var(--accent);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem var(--gutter);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: center;
+}
+.waitlist-banner__text {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.waitlist-banner__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--white);
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+.waitlist-banner__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.9rem;
+  background: var(--white);
+  color: var(--accent);
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.waitlist-banner__cta:hover { background: var(--ink); color: var(--white); }
+.waitlist-banner__close {
+  position: absolute;
+  right: var(--gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.8);
+  padding: 0.4rem;
+  transition: color 0.2s ease;
+}
+.waitlist-banner__close:hover { color: var(--white); }
+
 /* --- Betűtípus (helyben tárolva, nem külső CDN) -------------------------- */
 @font-face {
   font-family: "Bai Jamjuree";
@@ -539,12 +600,48 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 
 /* ==========================================================================
+   HERO DIVIDER — transition bar at bottom of hero
+   ========================================================================== */
+.hero__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.hero__divider-bar {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0.15) 80%, transparent 100%);
+}
+.hero__divider-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0.9rem var(--gutter);
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  flex-wrap: wrap;
+}
+.hero__divider-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
    MOTTO — jobbra zárt, a hero alatt
    ========================================================================== */
 .motto {
-  background: var(--paper);
+  background: var(--ink);
   padding-block: clamp(3rem, 7vw, 5.5rem);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-dark);
 }
 .motto__text {
   font-size: clamp(1.9rem, 4vw, 3.6rem);
@@ -562,8 +659,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
    COUNTERS — sötét, hullámmintával
    ========================================================================== */
 .counters {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
   overflow: hidden;
 }
 .counters__lines { display: none; }
@@ -614,9 +711,9 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 /* ==========================================================================
    BRANDS — két ellentétes irányba mozgó sor
    ========================================================================== */
-.brands { background: var(--white); }
+.brands { background: var(--ink); }
 .brands__head { max-width: 640px; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
-.brands__head .h-section { color: var(--ink); margin-block: 0.8rem 0; }
+.brands__head .h-section { color: var(--white); margin-block: 0.8rem 0; }
 
 .brand-index {
   list-style: none;
@@ -631,10 +728,10 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   column-gap: clamp(1.4rem, 2.5vw, 2.4rem);
   align-items: baseline;
   padding: clamp(1.6rem, 2.8vw, 2.4rem) 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-dark);
   transition: padding-left 0.4s var(--ease);
 }
-.brand-index > .brand-row:last-child { border-bottom: 1px solid var(--line); }
+.brand-index > .brand-row:last-child { border-bottom: 1px solid var(--line-dark); }
 
 .brand-row__num {
   grid-area: num;
@@ -1590,23 +1687,28 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     margin: 0.3rem;
   }
 }
-/* ===== DARK PALETTE — sections between hero and About (exploration) ===== */
+/* ===== DARK PALETTE — sections between hero and About ===== */
 .motto { background: var(--ink); border-bottom-color: var(--line-dark); }
 .motto__text { color: var(--white); }
 
 .counters { background: var(--ink); color: var(--white); }
-.counters__head { text-align: right; }
-.counter-card { text-align: right; }
+.counters__head { color: var(--white); text-align: left; }
+.counter-card { text-align: left; }
 .counter-card:not(:first-child) { border-left-color: var(--line-dark); }
-.counter-card .label { color: var(--muted-light); justify-content: flex-end; }
+.counter-card .num { color: var(--white); }
+.counter-card .label { color: var(--muted-light); justify-content: flex-start; }
+.counter-card .label::before { background: var(--accent); }
 
 .brands { background: var(--ink); }
+.brands__head .eyebrow { color: var(--accent); }
 .brands__head .h-section { color: var(--white); }
-.brand-row { border-top-color: var(--line-dark); }
+.brand-row { border-top-color: var(--line-dark); color: var(--white); }
 .brand-index > .brand-row:last-child { border-bottom-color: var(--line-dark); }
 .brand-row__num { color: var(--muted-light); }
 .brand-row__name { color: var(--white); }
 .brand-row__role { color: var(--muted-light); }
+.brand-row:hover .brand-row__num,
+.brand-row:hover .brand-row__name { color: var(--accent); }
 
 /* ===== BRANDS — centered floating preview ===== */
 .brand-row__thumb { display: none; }
