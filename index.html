@@ -18,6 +18,18 @@
 </head>
 <body>
 
+  <!-- ===== WAITLIST BANNER ===== -->
+  <div class="waitlist-banner" id="waitlistBanner">
+    <p class="waitlist-banner__text">
+      <span class="waitlist-banner__dot"></span>
+      I am expecting <strong>2 more clients</strong> to work with — I have no further open capacity as of now.
+      <a href="#contact" class="waitlist-banner__cta">Join the waitlist</a>
+    </p>
+    <button class="waitlist-banner__close" id="waitlistClose" aria-label="Close banner">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
@@ -62,7 +74,7 @@
       <div class="hero__photo">
         <picture>
           <source media="(max-width: 768px)" srcset="assets/images/hero-ai-mobile.jpg" />
-          <img src="assets/images/hero-ai.jpg" alt="Földesi Zsolt" fetchpriority="high" />
+          <img src="assets/images/hero-red-bg.jpg" alt="Földesi Zsolt" fetchpriority="high" />
         </picture>
       </div>
 
@@ -99,6 +111,22 @@
           <span></span><span></span><span></span>
         </span>
       </a>
+
+      <!-- Hero bottom divider -->
+      <div class="hero__divider" aria-hidden="true">
+        <div class="hero__divider-bar"></div>
+        <div class="hero__divider-stats">
+          <span>Marketing</span>
+          <i class="hero__divider-dot"></i>
+          <span>Technology</span>
+          <i class="hero__divider-dot"></i>
+          <span>Strategy</span>
+          <i class="hero__divider-dot"></i>
+          <span>15+ Years</span>
+          <i class="hero__divider-dot"></i>
+          <span>46 Countries</span>
+        </div>
+      </div>
     </section>
 
     <!-- ===== MOTTO ===== -->
@@ -583,6 +611,24 @@
   </footer>
 
   <!-- GSAP animation library (CDN) -->
+  <script>
+    (function() {
+      var banner = document.getElementById('waitlistBanner');
+      var closeBtn = document.getElementById('waitlistClose');
+      if (closeBtn && banner) {
+        closeBtn.addEventListener('click', function() {
+          banner.style.height = banner.offsetHeight + 'px';
+          banner.style.overflow = 'hidden';
+          requestAnimationFrame(function() {
+            banner.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+            banner.style.height = '0';
+            banner.style.opacity = '0';
+          });
+          setTimeout(function() { banner.remove(); }, 320);
+        });
+      }
+    })();
+  </script>
   <script src="js/vendor/gsap.min.js"></script>
   <script src="js/vendor/ScrollTrigger.min.js"></script>
   <!-- Site scripts -->
