@@ -8,7 +8,8 @@
    WAITLIST BANNER
    ========================================================================== */
 .waitlist-banner {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 200;
   background: var(--accent);
   color: var(--white);
@@ -145,6 +146,7 @@
   --radius-sm: 12px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --nav-h: 112px;
+  --banner-h: 44px;
 }
 
 /* --- Alap ----------------------------------------------------------------- */
@@ -277,13 +279,14 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
    ========================================================================== */
 .navbar {
   position: fixed;
-  inset: 0 0 auto 0;
+  inset: auto 0 auto 0;
+  top: var(--banner-h);
   z-index: 100;
   height: var(--nav-h);
   display: flex;
   align-items: center;
   transition: background 0.4s var(--ease), height 0.4s var(--ease),
-    box-shadow 0.4s var(--ease);
+    box-shadow 0.4s var(--ease), top 0.3s ease;
 }
 .navbar.is-scrolled {
   height: 80px;
@@ -456,7 +459,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: var(--nav-h);
+  padding-top: calc(var(--banner-h) + var(--nav-h));
   overflow: hidden;
   background: #e11025;
   color: var(--white);
@@ -481,7 +484,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .hero::after { display: none; }
 .hero__inner {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   max-width: none;
   padding-bottom: clamp(2rem, 5vw, 3.5rem);
