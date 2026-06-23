@@ -612,6 +612,7 @@
     (function() {
       var banner = document.getElementById('waitlistBanner');
       var closeBtn = document.getElementById('waitlistClose');
+      var navbar = document.getElementById('navbar');
       if (closeBtn && banner) {
         closeBtn.addEventListener('click', function() {
           banner.style.height = banner.offsetHeight + 'px';
@@ -620,6 +621,7 @@
             banner.style.transition = 'height 0.3s ease, opacity 0.3s ease';
             banner.style.height = '0';
             banner.style.opacity = '0';
+            if (navbar) navbar.style.top = '0';
           });
           setTimeout(function() { banner.remove(); }, 320);
         });
