@@ -412,12 +412,19 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: center right;
+  object-position: right bottom;
   filter: none;
   opacity: 1;
 }
 /* charcoal wash so the white headline always reads over the photo */
-.hero::after { display: none; }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(12,12,14,0.92) 0%, rgba(12,12,14,0.6) 28%, rgba(12,12,14,0.12) 50%, transparent 64%);
+  pointer-events: none;
+}
 .hero__inner {
   position: relative;
   z-index: 2;
@@ -431,7 +438,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #111111;
+  color: rgba(255,255,255,0.82);
   margin-bottom: clamp(1.2rem, 3vw, 2rem);
 }
 .hero__headline {
@@ -448,7 +455,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 .hero__word {
   display: inline-block;
-  color: #111111;
+  color: var(--accent);
   white-space: nowrap;
 }
 .hero__word:not(.is-active) {
@@ -476,7 +483,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #111111;
+  color: rgba(255,255,255,0.72);
 }
 .hero__stats {
   display: flex;
@@ -496,7 +503,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .hero__stats > span > span {
   margin-top: 0.5rem;
   font-size: clamp(1rem, 1.3vw, 1.2rem);
-  color: #111111;
+  color: rgba(255,255,255,0.72);
 }
 
 .visually-hidden {
@@ -512,7 +519,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 /* Görgetés-jelző */
 .scroll-cue {
   position: absolute;
-  right: var(--gutter);
+  left: var(--gutter);
   bottom: 1.6rem;
   display: flex;
   align-items: center;
@@ -520,14 +527,14 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #111111;
+  color: rgba(255,255,255,0.82);
   z-index: 3;
 }
 .scroll-cue__chevrons { display: flex; flex-direction: column; gap: 2px; }
 .scroll-cue__chevrons span {
   width: 11px; height: 11px;
-  border-right: 2px solid #111111;
-  border-bottom: 2px solid #111111;
+  border-right: 2px solid rgba(255,255,255,0.82);
+  border-bottom: 2px solid rgba(255,255,255,0.82);
   transform: rotate(45deg);
   animation: chevron 1.6s var(--ease) infinite;
 }
@@ -1513,11 +1520,11 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   .nav-links a { font-size: 1.3rem; color: var(--white); }
   .nav-links a.btn--outline { color: var(--white); }
   .nav-toggle { display: flex; }
-  .scroll-cue { display: none; }
+  .scroll-cue { display: flex; }
   .hero {
     flex-direction: column;
     align-items: stretch;
-    justify-content: flex-end;
+    justify-content: flex-start;
     min-height: 100svh;
     padding-top: var(--nav-h);
   }
@@ -1528,7 +1535,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     height: auto;
   }
   .hero__photo img {
-    object-position: center 16%;
+    object-position: center bottom;
   }
   .hero::after {
     display: block;
@@ -1536,7 +1543,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(180deg, rgba(225,16,37,0) 20%, rgba(225,16,37,0.5) 40%, rgba(225,16,37,0.93) 54%, #e11025 64%);
+    background: linear-gradient(180deg, rgba(12,12,14,0.95) 0%, rgba(12,12,14,0.72) 26%, rgba(12,12,14,0.2) 46%, transparent 62%);
     pointer-events: none;
   }
   .hero__inner {
@@ -1636,8 +1643,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 
 /* ===== ABOVE-FOLD FIXES — black logo, highlighted contact, no flag ===== */
-.logo__img--light { display: none; }
-.logo__img--dark { display: block; height: 76px; }
+.logo__img--light { display: block; height: 76px; }
+.logo__img--dark { display: none; }
 
 .nav-links .btn--outline {
   background: #111111;
@@ -1659,3 +1666,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 
 .lang-flag { display: none; }
+
+/* mobile menu close (X) must sit above the open panel */
+.nav-toggle { position: relative; z-index: 110; }
+.hero__inner { position: relative; z-index: 2; }
