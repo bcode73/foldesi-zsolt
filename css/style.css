@@ -11,7 +11,7 @@
   position: sticky;
   top: 0;
   z-index: 200;
-  background: var(--accent);
+  background: var(--ink);
   color: var(--white);
   display: flex;
   align-items: center;
@@ -21,6 +21,7 @@
   font-size: 0.88rem;
   font-weight: 500;
   text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .waitlist-banner__text {
   display: flex;
@@ -45,8 +46,8 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.3rem 0.9rem;
-  background: var(--white);
-  color: var(--accent);
+  background: var(--accent);
+  color: var(--white);
   border-radius: 100px;
   font-weight: 700;
   font-size: 0.82rem;
@@ -54,7 +55,7 @@
   transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
 }
-.waitlist-banner__cta:hover { background: var(--ink); color: var(--white); }
+.waitlist-banner__cta:hover { background: var(--accent-deep); color: var(--white); }
 .waitlist-banner__close {
   position: absolute;
   right: var(--gutter);
@@ -456,10 +457,11 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
    ========================================================================== */
 .hero {
   position: relative;
-  min-height: calc(100svh + var(--banner-h));
+  height: calc(100svh - var(--banner-h));
+  min-height: unset;
   display: flex;
   align-items: center;
-  padding-top: calc(var(--banner-h) + var(--nav-h));
+  padding-top: var(--nav-h);
   overflow: hidden;
   background: #e11025;
   color: var(--white);
@@ -664,7 +666,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
    COUNTERS — sötét, hullámmintával
    ========================================================================== */
 .counters {
-  background: var(--ink);
+  background: #323232;
   color: var(--white);
   overflow: hidden;
 }
@@ -776,12 +778,16 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 }
 .brand-row__thumb img {
   display: block;
-  filter: grayscale(1);
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
 }
 
 .brand-row:hover { padding-left: 1.4rem; }
 .brand-row:hover .brand-row__num { color: var(--accent); }
-.brand-row:hover .brand-row__name { color: var(--accent); }
+.brand-row:hover .brand-row__name { color: var(--muted-light); }
 .brand-row:hover .brand-row__thumb { opacity: 1; transform: translateY(-50%) translateX(0); }
 
 /* ==========================================================================
@@ -1718,12 +1724,12 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .motto { background: var(--ink); border-bottom-color: var(--line-dark); }
 .motto__text { color: var(--white); }
 
-.counters { background: var(--ink); color: var(--white); }
+.counters { background: #323232; color: var(--white); }
 .counters__head { color: var(--white); text-align: left; }
-.counter-card { text-align: left; }
+.counter-card { text-align: right; }
 .counter-card:not(:first-child) { border-left-color: var(--line-dark); }
-.counter-card .num { color: var(--white); }
-.counter-card .label { color: var(--muted-light); justify-content: flex-start; }
+.counter-card .num { color: var(--white); text-align: right; }
+.counter-card .label { color: var(--muted-light); justify-content: flex-end; }
 .counter-card .label::before { background: var(--accent); }
 
 .brands { background: var(--ink); }
@@ -1734,8 +1740,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .brand-row__num { color: var(--muted-light); }
 .brand-row__name { color: var(--white); }
 .brand-row__role { color: var(--muted-light); }
-.brand-row:hover .brand-row__num,
-.brand-row:hover .brand-row__name { color: var(--accent); }
+.brand-row:hover .brand-row__num { color: var(--accent); }
+.brand-row:hover .brand-row__name { color: var(--muted-light); }
 
 /* ===== BRANDS — centered floating preview ===== */
 .brand-row__thumb { display: none; }
