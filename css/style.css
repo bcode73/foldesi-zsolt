@@ -1535,7 +1535,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     height: auto;
   }
   .hero__photo img {
-    object-position: center bottom;
+    object-position: 63% center;
   }
   .hero::after {
     display: block;
