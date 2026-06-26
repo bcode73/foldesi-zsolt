@@ -1622,7 +1622,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
-  width: clamp(230px, 33vw, 480px);
+  width: clamp(170px, 22vw, 330px);
   display: grid;
   place-items: center;
   opacity: 0;
@@ -1639,7 +1639,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .brand-row:hover .brand-row__name,
 .brand-row.is-active .brand-row__name { color: #d6d6db; }
 @media (max-width: 768px) {
-  .brand-preview { top: 32%; width: clamp(150px, 52vw, 230px); }
+  .brand-preview { top: 34%; width: clamp(130px, 40vw, 200px); }
 }
 
 /* ===== ABOVE-FOLD FIXES — black logo, highlighted contact, no flag ===== */
