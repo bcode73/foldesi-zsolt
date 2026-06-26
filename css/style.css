@@ -1670,3 +1670,61 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 /* mobile menu close (X) must sit above the open panel */
 .nav-toggle { position: relative; z-index: 110; }
 .hero__inner { position: relative; z-index: 2; }
+
+
+/* ===== Waitlist banner ===== */
+.waitlist-banner {
+  position: relative;
+  z-index: 120;
+  background: #0c0c0e;
+  color: rgba(255, 255, 255, 0.88);
+}
+.waitlist-banner__text {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0.62rem 3rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.005em;
+  text-align: center;
+}
+.waitlist-banner strong { color: #fff; font-weight: 600; }
+.waitlist-banner__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.waitlist-banner__cta {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  white-space: nowrap;
+}
+.waitlist-banner__cta:hover { color: var(--accent); }
+.waitlist-banner__close {
+  position: absolute;
+  top: 50%;
+  right: clamp(0.9rem, 3vw, 1.5rem);
+  transform: translateY(-50%);
+  display: inline-flex;
+  background: none;
+  border: 0;
+  padding: 0.35rem;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  line-height: 0;
+}
+.waitlist-banner__close:hover { color: #fff; }
+.banner-short { display: none; }
+@media (max-width: 768px) {
+  .banner-full { display: none; }
+  .banner-short { display: inline; }
+  .waitlist-banner__text { padding: 0.6rem 2.6rem 0.6rem 1rem; font-size: 0.76rem; }
+}
