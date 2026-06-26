@@ -1543,7 +1543,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(180deg, rgba(12,12,14,0.95) 0%, rgba(12,12,14,0.72) 26%, rgba(12,12,14,0.2) 46%, transparent 62%);
+    background: linear-gradient(100deg, rgba(12,12,14,0.95) 0%, rgba(12,12,14,0.86) 30%, rgba(12,12,14,0.46) 52%, rgba(12,12,14,0.1) 69%, transparent 80%);
     pointer-events: none;
   }
   .hero__inner {
