@@ -412,7 +412,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: right bottom;
+  object-position: center 50%;
   filter: none;
   opacity: 1;
 }
@@ -519,7 +519,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 /* Görgetés-jelző */
 .scroll-cue {
   position: absolute;
-  left: var(--gutter);
+  right: var(--gutter);
   bottom: 1.6rem;
   display: flex;
   align-items: center;
