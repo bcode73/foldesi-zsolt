@@ -127,6 +127,16 @@
   /* ======================================================================
      SIMA GÖRGETÉS a horgony-linkekhez
      ====================================================================== */
+
+  /* Computes the total fixed-header clearance at call time so the offset
+     stays correct whether or not the waitlist banner is currently visible. */
+  function navOffset() {
+    var style = getComputedStyle(document.documentElement);
+    var navH    = parseInt(style.getPropertyValue("--nav-h"),    10) || 112;
+    var bannerH = parseInt(style.getPropertyValue("--banner-h"), 10) || 0;
+    return navH + bannerH + 16;
+  }
+
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       a.addEventListener("click", function (e) {
@@ -135,7 +145,7 @@
         var target = document.querySelector(id);
         if (!target) return;
         e.preventDefault();
-        var top = target.getBoundingClientRect().top + window.scrollY - 70;
+        var top = target.getBoundingClientRect().top + window.scrollY - navOffset();
         window.scrollTo({ top: top, behavior: "smooth" });
       });
     });
@@ -304,7 +314,7 @@
         return;
       }
       if (!target) return;
-      var top = target.getBoundingClientRect().top + window.scrollY - 70;
+      var top = target.getBoundingClientRect().top + window.scrollY - navOffset();
       window.scrollTo({ top: top, behavior: "auto" });
     }
 
