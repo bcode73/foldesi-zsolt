@@ -1555,8 +1555,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     pointer-events: none;
   }
   .hero__inner {
-    position: relative;
-    z-index: 2;
     padding-bottom: clamp(2.2rem, 9vw, 3.4rem);
   }
   .hero__headline { font-size: clamp(2.4rem, 11vw, 4rem); }
@@ -1576,7 +1574,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   body { font-size: 16px; }
   .service-row { grid-template-columns: 1fr; }
   .service-row__desc { grid-column: 1; margin-top: 0.6rem; }
-  .brand-row__thumb { display: none; }
   .blog-grid { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
   .hero__stats { gap: 1.6rem; }
@@ -1619,12 +1616,10 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .brands__head .h-section { color: var(--white); }
 .brand-row { border-top-color: var(--line-dark); }
 .brand-index > .brand-row:last-child { border-bottom-color: var(--line-dark); }
-.brand-row__num { color: var(--muted-light); }
 .brand-row__name { color: #b8b8be; }
 .brand-row__role { color: var(--muted-light); }
 
 /* ===== BRANDS — centered floating preview ===== */
-.brand-row__thumb { display: none; }
 .brand-preview {
   position: fixed;
   top: 50%;
@@ -1643,7 +1638,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .brand-preview.is-active { opacity: 1; transform: translateY(-50%) scale(1); }
 .brand-preview img { width: auto; height: 100%; max-width: 240px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.85; }
 .brand-row.is-active { padding-left: 1.4rem; }
-.brand-row__num { transition: color 0.3s ease; }
 .brand-row:hover .brand-row__num,
 .brand-row.is-active .brand-row__num { color: var(--accent); }
 .brand-row:hover .brand-row__name,
@@ -1652,9 +1646,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
   .brand-preview { top: 50%; right: 6vw; height: clamp(72px, 9vh, 104px); width: auto; }
 }
 
-/* ===== ABOVE-FOLD FIXES — black logo, highlighted contact, no flag ===== */
-.logo__img--light { display: block; height: 76px; }
-.logo__img--dark { display: none; }
+/* ===== ABOVE-FOLD FIXES — highlighted contact, no flag ===== */
 
 .nav-links .btn--outline {
   background: #111111;
@@ -1679,7 +1671,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 
 /* mobile menu close (X) must sit above the open panel */
 .nav-toggle { position: relative; z-index: 110; }
-.hero__inner { position: relative; z-index: 2; }
 
 
 /* ===== Waitlist banner ===== */
