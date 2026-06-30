@@ -689,7 +689,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
 .brand-row:hover { padding-left: 1.4rem; }
 .brand-row:hover .brand-row__num { color: var(--accent); }
 .brand-row:hover .brand-row__name { color: var(--accent); }
-.brand-row:hover .brand-row__thumb { opacity: 1; transform: translateY(-50%) translateX(0); }
+/* Inline thumb stays hidden; it only serves as the image source for .brand-preview. */
+.brand-row__thumb { display: none; }
 
 /* ==========================================================================
    ABOUT — csomópont / gondolattérkép elrendezés
