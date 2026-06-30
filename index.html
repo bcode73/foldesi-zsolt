@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <script>try{if(localStorage.getItem('fz-banner-dismissed')==='1')document.body.classList.add('banner-dismissed');}catch(e){}</script>
 
   <!-- ===== WAITLIST BANNER ===== -->
   <div class="waitlist-banner" id="waitlistBanner">
@@ -110,21 +111,6 @@
         </span>
       </a>
 
-      <!-- Hero bottom divider -->
-      <div class="hero__divider" aria-hidden="true">
-        <div class="hero__divider-bar"></div>
-        <div class="hero__divider-stats">
-          <span>Marketing</span>
-          <i class="hero__divider-dot"></i>
-          <span>Technology</span>
-          <i class="hero__divider-dot"></i>
-          <span>Strategy</span>
-          <i class="hero__divider-dot"></i>
-          <span>15+ Years</span>
-          <i class="hero__divider-dot"></i>
-          <span>46 Countries</span>
-        </div>
-      </div>
     </section>
 
     <!-- ===== MOTTO ===== -->
@@ -616,6 +602,7 @@
       if (closeBtn && banner) {
         closeBtn.addEventListener('click', function() {
           document.body.classList.add('banner-dismissed');
+          try { localStorage.setItem('fz-banner-dismissed', '1'); } catch(e) {}
         });
       }
     })();

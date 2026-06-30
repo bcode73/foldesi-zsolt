@@ -67,6 +67,7 @@
     if (!rows.length) return;
     gsap.set(rows, { opacity: 0, y: 40 });
     ScrollTrigger.batch(rows, {
+      once: true,
       start: "top 88%",
       onEnter: function (batch) {
         gsap.to(batch, {
