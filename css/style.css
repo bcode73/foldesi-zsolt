@@ -1549,14 +1549,14 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
     object-fit: cover;
     object-position: 72% 58%;
   }
-  /* Top-anchored scrim only behind the headline; the red background stays prominent below. */
+  /* Top-anchored scrim covering headline through stats; red background stays prominent below. */
   .hero::after {
     display: block;
     content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(180deg, rgba(12,12,14,0.78) 0%, rgba(12,12,14,0.42) 34%, rgba(12,12,14,0.08) 52%, transparent 64%);
+    background: linear-gradient(180deg, rgba(12,12,14,0.82) 0%, rgba(12,12,14,0.58) 32%, rgba(12,12,14,0.36) 52%, rgba(12,12,14,0.16) 70%, transparent 84%);
     pointer-events: none;
   }
   .hero__inner {
